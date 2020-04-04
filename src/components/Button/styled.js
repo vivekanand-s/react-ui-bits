@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components'
 
-const StyledButtonLabel = styled.span`
+const ButtonLabel = styled.span`
     width: 100%;
     display: inherit;
     align-items: inherit;
     justify-content: inherit;
 `
 
-const StyledButton = styled.button`
+const Button = styled.button`
     align-items: center;
     background-color: ${({theme}) => theme.backgroundColor ? theme.backgroundColor : 'transparent'};
     border: ${({theme}) => theme.border ? theme.border : 0 };
@@ -36,4 +36,4 @@ const StyledButton = styled.button`
     -webkit-tap-highlight-color: transparent;
 `
 
-export { StyledButton, StyledButtonLabel }
+export { Button, ButtonLabel }

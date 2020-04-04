@@ -5,7 +5,7 @@ import {
     DISABLED_COLOR,
     DEFAULT_BTN_COLOR,
     DEFAULT_COLOR
-} from '@components/styles'
+} from '@config/styles'
 
 const THEME = {
     contained: {

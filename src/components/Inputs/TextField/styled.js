@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 
 import { StyledLabel } from '@components/Label'
-import { StyledInput } from '@components/Inputs/Input'
-import { TEXTFIELD_COLOR, PRIMARY_COLOR } from '@components/styles'
+import { Input } from '@components/Input/styled'
+import { TEXTFIELD_COLOR, PRIMARY_COLOR } from '@config/styles'
 
 const SharedStyle = css`
     position: absolute;
@@ -39,7 +39,7 @@ const StyledInputLabel = styled(StyledLabel)`
     transition: transform .3s ease-in-out;
 `
 
-const StyledStandardInput = styled(StyledInput)`
+const StyledStandardInput = styled(Input)`
     border: none;
     padding-top: 0.825rem;
     height: auto;
@@ -64,7 +64,7 @@ const StyledStandardInput = styled(StyledInput)`
     }
 `
 
-const StyledDefaultInput = styled(StyledInput)`
+const StyledDefaultInput = styled(Input)`
     padding-left: 5px;
     padding-top: 0;
     height: auto;
@@ -86,7 +86,7 @@ const StyledDefaultInput = styled(StyledInput)`
     }
 `
 
-const StyledOutlinedInput = styled(StyledInput)`
+const StyledOutlinedInput = styled(Input)`
     padding-left: 5px;
     height: auto;
 

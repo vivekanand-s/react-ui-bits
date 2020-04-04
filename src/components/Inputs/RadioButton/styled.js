@@ -1,8 +1,8 @@
 import styled, { keyframes } from 'styled-components'
 
-import { StyledInput } from '@components/Inputs/Input'
+import { Input } from '@components/Input'
 import { StyledLabel } from '@components/Label'
-import { TEXTFIELD_COLOR, RippleAnimation } from '@components/styles'
+import { TEXTFIELD_COLOR, RippleAnimation } from '@config/styles'
 
 const ShowBorderAnimation = keyframes`
     to {
@@ -27,7 +27,7 @@ const ScaleRadioAnimation = keyframes`
     }
 `
 
-const StyledRadioButton = styled(StyledInput)`
+const StyledRadioButton = styled(Input)`
 	border: 0;
 	border-radius: 50%;
 

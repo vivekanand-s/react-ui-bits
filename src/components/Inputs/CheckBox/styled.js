@@ -1,8 +1,8 @@
 import styled, { keyframes } from 'styled-components'
 
-import { StyledInput } from '@components/Inputs/Input'
+import { Input } from '@components/Input/styled'
 import { StyledLabel } from '@components/Label'
-import { TEXTFIELD_COLOR, PRIMARY_COLOR, RippleAnimation } from '@components/styles'
+import { TEXTFIELD_COLOR, PRIMARY_COLOR, RippleAnimation } from '@config/styles'
 
 const DashAnimation = keyframes`
     to {
@@ -10,7 +10,7 @@ const DashAnimation = keyframes`
     }
 `
 
-const StyledCheckBox = styled(StyledInput)`
+const StyledCheckBox = styled(Input)`
 	border: 0;
 	border: 1px solid ${TEXTFIELD_COLOR};
 	border-radius: 2px;
