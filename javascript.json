@@ -1,0 +1,83 @@
+{
+	"Function Stateless": {
+		"prefix": "fsc",
+		"body": [
+			"import React from 'react'",
+			"",
+			"const $TM_FILENAME_BASE = () => {",
+			"\treturn()",
+			"}",
+			"",
+			"export default $TM_FILENAME_BASE",
+			"export { $TM_FILENAME_BASE }",
+			""
+		],
+		"description": "Create stateless functional components"
+	},
+	"Function Stateless PropTypes": {
+		"prefix": "fscp",
+		"body": [
+			"import React from 'react'",
+			"import PropTypes from 'prop-types'",
+			"",
+			"const $TM_FILENAME_BASE = () => {",
+			"\treturn()",
+			"}",
+			"",
+			"$TM_FILENAME_BASE.propTypes = {}",
+			"",
+			"export default $TM_FILENAME_BASE",
+			"export { $TM_FILENAME_BASE }",
+			""
+		],
+		"description": "Create stateless functional components with proptypes"
+	},
+	"Function Stateful": {
+		"prefix": "ffc",
+		"body": [
+			"import React, { useState } from 'react",
+			"",
+			"const $TM_FILENAME_BASE = () => {",
+			"",
+			"\tconst [ $2, $3] = useState($4)",
+			"",
+			"\treturn()",
+			"}",
+			"",
+			"export default $TM_FILENAME_BASE",
+			"export { $TM_FILENAME_BASE }",
+			""
+		],
+		"description": "Create stateful functional components"
+	},
+	"Function Stateful PropTypes": {
+		"prefix": "ffcp",
+		"body": [
+			"import React, { useState } from 'react",
+			"import PropTypes from 'prop-types'",
+			"",
+			"const $TM_FILENAME_BASE = () => {",
+			"",
+			"\tconst [ $2, $3] = useState($4)",
+			"",
+			"\treturn()",
+			"}",
+			"",
+			"$TM_FILENAME_BASE.propTypes = {}",
+			"",
+			"export default $TM_FILENAME_BASE",
+			"export { $TM_FILENAME_BASE }",
+			""
+		],
+		"description": "Create stateful functional components"
+	},
+	"Exports in Index File": {
+		"prefix": "eif",
+		"body": [
+			"export { default } from './$1'",
+			"export * from './$1'",
+			"export * from './styled'"
+		],
+		"description": "Export Components from index file"
+	}
+}
