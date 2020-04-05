@@ -7,6 +7,7 @@ const DISABLED_BTN_COLOR = 'rgba(0, 0, 0, 0.26)'
 const DEFAULT_COLOR = '#e0e0e0'
 const DEFAULT_BTN_COLOR = 'rgba(0, 0, 0, 0.87)'
 const TEXTFIELD_COLOR = 'rgba(0, 0, 0, 0.42)'
+const ERROR_COLOR = '#f44336';
 
 const RippleAnimation = keyframes`
 	0% {
@@ -25,5 +26,6 @@ export {
     DEFAULT_COLOR,
     DEFAULT_BTN_COLOR,
     TEXTFIELD_COLOR,
+    ERROR_COLOR,
     RippleAnimation
 }
