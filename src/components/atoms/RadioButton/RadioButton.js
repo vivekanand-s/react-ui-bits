@@ -68,7 +68,7 @@ RadioButton.propTypes = {
      * Callback to change checked state
      */
     onChange: PropTypes.func,
-    ref: PropTypes.oneof([
+    ref: PropTypes.oneOf([
         PropTypes.func,
         PropTypes.shape({current: PropTypes.instanceOf(Element)})
     ])

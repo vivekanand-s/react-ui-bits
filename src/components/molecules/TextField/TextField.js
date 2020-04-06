@@ -1,13 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 import * as Styled from './styled'
-import { DefaultInput, StandardInput, OutlinedInput } from '@components/atoms'
+import {
+    DefaultInput,
+    StandardInput,
+    OutlinedInput,
+    Label
+} from '@components/atoms'
 
 const variantComponent = {
-    standard: StandardInput,
-    default: DefaultInput,
-    outlined: OutlinedInput
+    standard: styled(StandardInput)`${Styled.StandardFocusStyles}`,
+    default: styled(DefaultInput)`${Styled.DefaultFocusStyles}`,
+    outlined: styled(OutlinedInput)`${Styled.OutlinedFocusStyles}`,
 }
 
 const TextField = React.forwardRef((props, ref) => {
@@ -32,7 +38,7 @@ const TextField = React.forwardRef((props, ref) => {
                 name={name} placeholder={placeholder} value={value} onChange={onChange} 
                 className={`${variant} ${className}`} {...restprops}
             />
-            <Styled.InputLabel variant={variant}>{label}</Styled.InputLabel>
+            <Label styles={Styled.LabelStyles} variant={variant}>{label}</Label>
             <Styled.Border />
         </Styled.Wrapper>
     )
@@ -71,6 +77,9 @@ TextField.propTypes = {
      * To choose pre-defined styles
      */
     variant: PropTypes.oneOf(['default', 'standard', 'outlined']),
+    /**
+     * Handler to change input values
+     */
     onChange: PropTypes.func,
     ref: PropTypes.oneOf([
         PropTypes.func,

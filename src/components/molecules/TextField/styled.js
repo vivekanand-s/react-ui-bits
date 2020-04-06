@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
 
-import { Label } from '@components/Label/styled'
 import { TEXTFIELD_COLOR, PRIMARY_COLOR } from '@config/styles'
 
 const SharedStyle = css`
@@ -16,7 +15,7 @@ const Wrapper = styled.div`
     position: relative;
 `
 
-const InputLabel = styled(Label)`
+const LabelStyles = css`
     
     ${SharedStyle};
 
@@ -95,9 +94,9 @@ const Border = styled.div`
 
 export { 
     Wrapper,
-    StandardInput,
-    DefaultInput,
-    OutlinedInput,
-    InputLabel,
-    Border
+    Border,
+    LabelStyles,
+    StandardFocusStyles,
+    DefaultFocusStyles,
+    OutlinedFocusStyles
 }

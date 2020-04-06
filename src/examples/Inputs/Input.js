@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { StandardInput } from '@components/Inputs/StandardInput'
+import { StandardInput } from '@components/atoms'
 
 const styles = {
     margin: '10px'
