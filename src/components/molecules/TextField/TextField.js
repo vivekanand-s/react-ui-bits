@@ -83,7 +83,7 @@ TextField.propTypes = {
     onChange: PropTypes.func,
     ref: PropTypes.oneOf([
         PropTypes.func,
-        PropTypes.shape({current: PropTypes.instanceOf(Element)})
+        PropTypes.shape({current: PropTypes.instanceOf(PropTypes.Element)})
     ])
 }
 

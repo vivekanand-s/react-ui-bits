@@ -24,6 +24,10 @@ const StandardStyles = css`
     ${props => props.error && css`
         border-bottom: 2px solid ${ERROR_COLOR};
     `}
+
+    &:focus {
+        border-bottom: 2px solid ${PRIMARY_COLOR};
+    }
 `
 
 const OutlinedStyles = css`

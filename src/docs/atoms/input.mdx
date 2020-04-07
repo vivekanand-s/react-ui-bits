@@ -1,0 +1,39 @@
+---
+name: Input
+menu: Atoms
+route: /atoms/input
+---
+
+import { Playground, Props } from 'docz'
+import { Input, DefaultInput, StandardInput, OutlinedInput } from '@components/atoms'
+
+# Input
+
+<Props of={Input} />
+
+## Basic usage
+
+Input box with no animations.
+
+<Playground>
+    <Input type="text" placeholder="name" name="name" />
+</Playground>
+
+## DefaultInput
+
+Input with border animation.
+
+<Playground>
+    <DefaultInput type="name" placeholder="name" name="name" />
+</Playground>
+
+## 
+
+<Playground>
+    <DefaultInput type="password" placeholder="password" name="password" error />
+</Playground>
+
+## StandardInput
+<Playground>
+    <StandardInput type="text" placeholder="name" name="name" width="250px" onChange={() => alert("Change triggered")}/>
+</Playground>

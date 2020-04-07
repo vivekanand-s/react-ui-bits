@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-import { TEXTFIELD_COLOR, PRIMARY_COLOR, ERROR_COLOR } from '@config/styles'
+import { TEXTFIELD_COLOR } from '@config/styles'
 
 const Input = styled.input`
     outline: none;

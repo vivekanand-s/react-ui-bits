@@ -38,7 +38,7 @@ const CheckBox = React.forwardRef((props, ref) => {
         <Label ref={ref} data-test='input-checkbox' className={`checkbox ${className}`} styles={Styled.SVGStyles}>
             <Styled.CheckBoxWrapper height={height} width={width}>
                 <Input name={name} type="checkbox" value={value} 
-                    checked={isChecked} onChange={toggleChange} {...restprops} styles={Styled.CheckBoxStyles} />
+                    checked={isChecked} onChange={onChange} {...restprops} styles={Styled.CheckBoxStyles} />
                 <svg viewBox="0 0 25 25">
                     <path d="M4.5 12.5 l4 4.5 11.5 -10" />
                 </svg>
@@ -81,10 +81,10 @@ CheckBox.propTypes = {
      * Handler to get selected checkbox values, if onchange handler is not specifed
      */
     handleCheckboxChange: PropTypes.func,
-    ref: PropTypes.oneOf([
-        PropTypes.func,
-        PropTypes.shape({current: PropTypes.instanceOf(Element)})
-    ])
+    // ref: PropTypes.oneOf([
+    //     PropTypes.func,
+    //     PropTypes.shape({current: PropTypes.instanceOf(Element)})
+    // ])
 }
 
 export default CheckBox

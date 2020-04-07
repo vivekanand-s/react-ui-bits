@@ -22,7 +22,7 @@ const Button = React.forwardRef((props, ref) => {
     
     return (
         <Styled.Button theme={THEME[variant][color]} className={`btn btn-${color} ${className}`} data-test='button-root' 
-            ref={ref} variant={variant} color={color} as={tagName} styles={styles} {...restprops}>
+            ref={ref} variant={variant} color={color} as={tagName} styles={styles} {...restprops} href={href}>
             <Styled.ButtonLabel className='button-label' data-test='button-label'>
                 {children}
             </Styled.ButtonLabel>
@@ -65,7 +65,7 @@ Button.propTypes = {
     styles: PropTypes.object,
     ref: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(Element)})
+        PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.Element)})
     ])
 }
 
