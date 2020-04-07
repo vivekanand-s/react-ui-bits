@@ -26,7 +26,7 @@ const RadioButton = React.forwardRef((props, ref) => {
         <Label ref={ref} data-test='input-radio' className={`radio ${className}`} styles={Styled.SVGStyles}>
             <Styled.RadioWrapper height={height} width={width}>
                 <Input type='radio' name={name} value={value} 
-                    checked={checked === value} onChange={onChange} {...restprops} />
+                    checked={checked === value} onChange={onChange} styles={Styled.RadioBtnStyles} {...restprops} />
                 <svg viewBox='0 0 26 26'>
                     <circle className='svg-circle-1' cx='13' cy='13' r='12' />
                     <circle className='svg-circle-2' cx='13' cy='13' r='6' />
@@ -41,6 +41,14 @@ const RadioButton = React.forwardRef((props, ref) => {
 
 RadioButton.propTypes = {
     /**
+     * Name for the radio button
+     */
+    name: PropTypes.string.isRequired,
+    /**
+     * Value for the radio button
+     */
+    value: PropTypes.string.isRequired,
+    /**
      * Height of the radio button
      */
     height: PropTypes.string,
@@ -53,25 +61,17 @@ RadioButton.propTypes = {
      */
     label: PropTypes.string,
     /**
-     * Name for the radio button
-     */
-    name: PropTypes.string.isRequired,
-    /**
-     * Value for the radio button
-     */
-    value: PropTypes.string.isRequired,
-    /**
-     * If true, radio button will be selected
+     * If the value matches, radio button will be selected
      */
     checked: PropTypes.string,
     /**
      * Callback to change checked state
      */
     onChange: PropTypes.func,
-    // ref: PropTypes.oneOf([
-    //     PropTypes.func,
-    //     PropTypes.shape({current: PropTypes.instanceOf(Element)})
-    // ])
+    ref: PropTypes.oneOf([
+        PropTypes.func,
+        PropTypes.shape({current: PropTypes.instanceOf(PropTypes.Element)})
+    ])
 }
 
 export default RadioButton

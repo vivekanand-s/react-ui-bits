@@ -32,7 +32,11 @@ Label.propTypes = {
     /**
      * Custom styles for the label
      */
-    styles: PropTypes.object
+    styles: PropTypes.object,
+    ref: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.Element)})
+    ])
 }
 
 export default Label

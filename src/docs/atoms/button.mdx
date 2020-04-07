@@ -1,7 +1,7 @@
 ---
 name: Button
 menu: Atoms
-route: /atoms/button
+route: /src/components/atoms/button
 ---
 
 import { Playground, Props } from 'docz'
@@ -37,8 +37,8 @@ Button will be created with **defaults** variant styles.
 
 ## Anchors
 
-By passing `tagName` property as **a**, button will be rendered as anchor element. 
+By passing `component` property as **a**, button will be rendered as anchor element. 
 
 <Playground>
-    <Button color="primary" tagName="a" href="/link">Click Me!</Button>
+    <Button color="primary" component="a" href="/link">Click Me!</Button>
 </Playground>

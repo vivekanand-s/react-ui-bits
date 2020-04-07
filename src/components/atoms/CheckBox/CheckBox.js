@@ -50,6 +50,14 @@ const CheckBox = React.forwardRef((props, ref) => {
 
 CheckBox.propTypes = {
     /**
+     * Name for the checkbox
+     */
+    name: PropTypes.string.isRequired,
+    /**
+     * Value for the checkbox
+     */
+    value: PropTypes.string.isRequired,
+    /**
      * Height of the checkbox
      */
     height: PropTypes.string,
@@ -61,14 +69,6 @@ CheckBox.propTypes = {
      * Label to display the user
      */
     label: PropTypes.string,
-    /**
-     * Name for the checkbox
-     */
-    name: PropTypes.string.isRequired,
-    /**
-     * Value for the checkbox
-     */
-    value: PropTypes.string.isRequired,
     /**
      * If true, checkbox will be selected
      */

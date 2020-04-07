@@ -17,4 +17,11 @@ const StandardInput = React.forwardRef((props, ref) => {
     )
 })
 
-export { DefaultInput, StandardInput }
+const OutlinedInput = React.forwardRef((props, ref) => {
+    
+    return (
+        <Input styles={StandardStyles} ref={ref} {...props} />
+    )
+})
+
+export { DefaultInput, StandardInput, OutlinedInput }

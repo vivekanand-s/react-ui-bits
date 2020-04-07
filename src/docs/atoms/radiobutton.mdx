@@ -1,0 +1,35 @@
+---
+name: RadioButton
+menu: Atoms
+route: /src/components/atoms/radiobutton
+---
+
+import { Playground, Props } from 'docz'
+import { RadioButton } from '@components/atoms'
+
+# RadioButton
+
+<Props of={RadioButton} />
+
+## Basic usage
+
+<Playground>
+    <RadioButton name="gender" value="male" label="Male" />
+</Playground>
+
+## Selected RadioButton
+
+To check a radiobutton, pass value of the radiobutton to `checked` prop.
+
+<Playground>
+    <RadioButton name="gender" value="male" label="Male" checked="male" onChange={() => {}} />
+    <RadioButton name="gender" value="female" label="Female" checked="male" onChange={() => {}} />
+</Playground>
+
+## Height & Width
+
+`Height` and `Width` props are used to change radiobutton size.
+
+<Playground>
+    <RadioButton name="gender" value="male" label="Male" height="30px" width="30px" />
+</Playground>
