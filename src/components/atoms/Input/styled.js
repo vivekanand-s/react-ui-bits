@@ -4,7 +4,6 @@ import { TEXTFIELD_COLOR } from '@config/styles'
 
 const Input = styled.input`
     outline: none;
-    font-family: 'Roboto';
     font-size: 1rem;
     border: 1px solid ${TEXTFIELD_COLOR};
     -webkit-appearance: none;
@@ -13,6 +12,7 @@ const Input = styled.input`
     width: ${props => props.width || '100%'};
 	margin: ${props => props.margin || 0 };
 	padding: ${props => props.padding || '0.5rem 0 0.5rem 0.35rem' };
+    transition: all ease 500ms;
 
     ${props => props.styles};
 `

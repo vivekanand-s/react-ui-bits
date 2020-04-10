@@ -1,14 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+  
+import { DefaultInput, StandardInput, OutlinedInput, RoundedInput } from '@components/atoms'
 
-import { ExInput } from './src/examples'
-
-const selects = new Set()
-
-const App = () => {
-    return (
-        <ExInput />
-    )
-}
-
-ReactDOM.render(<App />, document.getElementById('app'))  
+ReactDOM.render(<RoundedInput width="250px" />, document.getElementById('app'))  

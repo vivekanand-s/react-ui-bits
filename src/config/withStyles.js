@@ -1,12 +1,9 @@
 import React from 'react'
-import styled, {css} from 'styled-components'
 
-const withStyles = (component, styles ) => {
-    const StyledComponent = styled(component)`
-        ${styles}
-    `
+const withStyles = (Component, styles={}) => React.forwardRef((props, ref) => {
+    
+  return <Component styles={styles}  {...props} />;
 
-    return <StyledComponent {...props} />
-}
+});
 
 export default withStyles

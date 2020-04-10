@@ -10,7 +10,6 @@ const fontSizes = {
 }
 
 const TypoGraphy = styled.p`
-    font-family: 'Roboto';
     font-size: ${props => props.variant ? fontSizes[props.variant] : '1rem'};
     align-items: center;
     justify-content: center;

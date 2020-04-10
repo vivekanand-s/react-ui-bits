@@ -13,6 +13,7 @@ const DashAnimation = keyframes`
 `
 
 const CheckBoxStyles = css`
+	height: 100%;
 	border: 0;
 	border: 1px solid ${TEXTFIELD_COLOR};
 	border-radius: 2px;

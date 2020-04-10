@@ -34,4 +34,19 @@ const OutlinedStyles = css`
     ${DefaultStyles}
 `
 
-export { DefaultStyles, StandardStyles, OutlinedStyles }
+const RoundedStyles = css`
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 50px;
+    padding-left: 0.5em;
+    box-shadow: 2px 3px 1px rgba(0,0,0,0.15);
+
+    ${props => props.error && css`
+        border: 2px solid ${ERROR_COLOR};
+    `}
+
+    &:focus {
+        box-shadow: 4px 4px 5px rgba(0,0,0,0.15);
+    }
+`
+
+export { DefaultStyles, StandardStyles, OutlinedStyles, RoundedStyles }

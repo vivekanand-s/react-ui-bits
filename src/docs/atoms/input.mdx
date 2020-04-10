@@ -5,7 +5,7 @@ route: /src/components/atoms/input
 ---
 
 import { Playground, Props } from 'docz'
-import { Input, DefaultInput, StandardInput, OutlinedInput } from '@components/atoms'
+import { Input, DefaultInput, StandardInput, OutlinedInput, RoundedInput } from '@components/atoms'
 
 # Input
 
@@ -29,11 +29,22 @@ Input with border animation.
 
 ## 
 
+**error** prop is used to mark the input as error.
+
 <Playground>
     <DefaultInput type="password" placeholder="password" name="password" error />
 </Playground>
 
 ## StandardInput
+
+`onChange` property is used to set the user input.
+
 <Playground>
     <StandardInput type="text" placeholder="name" name="name" width="250px" onChange={() => alert("Change triggered")}/>
+</Playground>
+
+## Rounded Input
+
+<Playground>
+    <RoundedInput type="text" name="email" placeholder="Email"/>
 </Playground>

@@ -1,27 +1,20 @@
-import React from 'react'
-
-import { DefaultStyles, StandardStyles } from './styled'
+import {
+    DefaultStyles,
+    StandardStyles,
+    OutlinedStyles,
+    RoundedStyles
+} from './styled'
 import { Input } from '@components/atoms'
+import withStyles from '@config/withStyles'
 
-const DefaultInput = React.forwardRef((props, ref) => {
-    
-    return (
-        <Input styles={DefaultStyles} ref={ref} {...props} />
-    )
-})
+const DefaultInput = withStyles(Input, DefaultStyles)
+const StandardInput = withStyles(Input, StandardStyles)
+const OutlinedInput = withStyles(Input, OutlinedStyles)
+const RoundedInput = withStyles(Input, RoundedStyles)
 
-const StandardInput = React.forwardRef((props, ref) => {
-    
-    return (
-        <Input styles={StandardStyles} ref={ref} {...props} />
-    )
-})
-
-const OutlinedInput = React.forwardRef((props, ref) => {
-    
-    return (
-        <Input styles={StandardStyles} ref={ref} {...props} />
-    )
-})
-
-export { DefaultInput, StandardInput, OutlinedInput }
+export {
+    DefaultInput,
+    StandardInput,
+    OutlinedInput,
+    RoundedInput
+}

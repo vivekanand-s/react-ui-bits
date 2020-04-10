@@ -76,7 +76,10 @@ Input.propTypes = {
     /**
      * Custom styles for input
      */
-    styles: PropTypes.object,
+    styles: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.array
+    ]),
     /**
      * If true, error animation will be shown
      */

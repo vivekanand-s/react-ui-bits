@@ -15,7 +15,6 @@ const Button = styled.button`
     color: ${props => props.theme.color};
     cursor: pointer;
     display: inline-flex;
-    font-family: 'Roboto';
     font-size: 0.875em;
     font-weight: 500;
     justify-content: center;
@@ -32,7 +31,7 @@ const Button = styled.button`
         pointer-events: none;
         opacity: 0.65;
     `};
-    ${props => props.variant === 'contained' && css`
+    ${props => (props.variant === 'contained' || props.variant === 'outlined') && css`
         box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
     `};
     ${props => props.styles};

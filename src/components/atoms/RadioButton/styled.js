@@ -32,6 +32,7 @@ const RadioWrapper = styled.span`
 `
 
 const RadioBtnStyles = css`
+	height: 100%;
 	border: 0;
 	border-radius: 50%;
 
