@@ -8,9 +8,10 @@ const SharedStyle = css`
     left: 0;
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.label`
     height: 45px;
-    margin: 8px;
+    width: 100%;
+    margin: 8px 0;
     display: inline-flex;
     position: relative;
 `
@@ -22,15 +23,15 @@ const LabelStyles = css`
     pointer-events: none;
     
     ${props => props.variant === 'default' && css`
-        transform: translate(5px, 14px) scale(1);
+        transform: translate(5px, 13px) scale(1);
     `};
 
     ${props => props.variant === 'standard' && css`
-        transform: translate(0, 16px) scale(1);
+        transform: translate(0px, 15px) scale(1);
     `};
 
     ${props => props.variant === 'outlined' && css`
-        transform: translate(5px, 14px) scale(1);
+        transform: translate(5px, 13px) scale(1);
         background-color: #FFF;
     `};
 
@@ -38,24 +39,24 @@ const LabelStyles = css`
 `
 
 const StandardFocusStyles = css`
+    padding: 10px 0 0;
 
     &:focus + label {
-        transform: translate(-5px, -3px) scale(0.85);
+        transform: translate(-3px, -6px) scale(0.85);
         color: ${PRIMARY_COLOR};
     }
 
     &:not(:placeholder-shown) + label {
-        transform: translate(-5px, -3px) scale(0.85);
+        transform: translate(-3px, -6px) scale(0.85);
         color: ${TEXTFIELD_COLOR};
     }
 
-    &:focus ~ div {
+    &:focus ~ span {
         width: 100%;
     }
 `
 
 const DefaultFocusStyles = css`
-    
     &:focus + label {
         transform: translate(5px, 20px) scale(0);
     }
@@ -66,6 +67,7 @@ const DefaultFocusStyles = css`
 `
 
 const OutlinedFocusStyles = css`
+    border-radius: 3px;
 
     &:focus + label {
         transform: translate(5px, -7px) scale(0.85);
@@ -80,12 +82,12 @@ const OutlinedFocusStyles = css`
     }
 `
 
-const Border = styled.div`
+const Border = styled.span`
     
     ${SharedStyle};
     
     top: auto;
-    bottom: 0;
+    bottom: -0.5px;
     width: 0;
     height: 2px;
     background-color: ${PRIMARY_COLOR};

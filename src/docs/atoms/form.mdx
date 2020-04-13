@@ -1,0 +1,33 @@
+---
+name: Form
+menu: Atoms
+route: /src/components/atoms/form
+---
+
+import { Playground, Props} from 'docz'
+import { Form, Button } from '@components/atoms'
+import { TextField } from '@components/molecules'
+
+# Form
+
+<Props of={Form} />
+
+## Basic Usage
+
+<Playground>
+    <Form width="300px" name="login">
+        <TextField variant="standard" color="primary" label='Email' type='text' />
+        <TextField variant="standard" color="primary" label='Password' type='password' />
+        <Button variant='contained' color='primary'>LOGIN</Button>
+    </Form>
+</Playground>
+
+## Form onSubmit
+
+<Playground>
+    <Form width="300px" name="login" onSubmit={(event) => {event.preventDefault();alert('Form Submit')}}>
+        <TextField variant="outlined" color="primary" label='Email' type='text' />
+        <TextField variant="outlined" color="primary" label='Password' type='password' />
+        <Button variant='contained' color='primary'>LOGIN</Button>
+    </Form>
+</Playground>

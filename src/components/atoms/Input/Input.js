@@ -16,15 +16,16 @@ const Input = React.forwardRef((props, ref) => {
         defaultValue,
         value,
         onChange,
-        className='',
+        className = '',
         styles,
+        animateBorder = true,
         ...restprops 
     } = props
 
     return (
         <Styled.Input type={type}  ref={ref} data-test='input-root' className={`input-${type} ${className}`}
-            autocomplete={autocomplete} name={name} placeholder={placeholder} value= {value} 
-            onChange={onChange} defaultValue={defaultValue} styles={styles} {...restprops} />
+            autocomplete={autocomplete} name={name} placeholder={placeholder} value= {value} onChange={onChange}
+            defaultValue={defaultValue} styles={styles} animateBorder={animateBorder} {...restprops} />
     )
 })
 

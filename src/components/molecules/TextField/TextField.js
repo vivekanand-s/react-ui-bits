@@ -31,15 +31,19 @@ const TextField = React.forwardRef((props, ref) => {
         ...restprops
     } = props
     const Input = variantComponent[variant]
+    let animateBorder = variant === 'standard' ? false : true
+    animateBorder = props.animateBorder || animateBorder
     
     return (
         <Styled.Wrapper>
             <Input ref={ref} data-test='input-root' type={type} autocomplete={autocomplete}
                 name={name} placeholder={placeholder} value={value} onChange={onChange} 
-                className={`${variant} ${className}`} {...restprops}
+                className={`${variant} ${className}`} animateBorder={animateBorder} {...restprops}
             />
             <Label styles={Styled.LabelStyles} variant={variant}>{label}</Label>
-            <Styled.Border />
+            {variant === 'standard' &&
+                <Styled.Border />
+            }
         </Styled.Wrapper>
     )
 })
@@ -81,6 +85,13 @@ TextField.propTypes = {
      * Handler to change input values
      */
     onChange: PropTypes.func,
+    /**
+     * Custom styles for the element
+     */
+    styles: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.array
+    ]),
     ref: PropTypes.oneOf([
         PropTypes.func,
         PropTypes.shape({current: PropTypes.instanceOf(PropTypes.Element)})

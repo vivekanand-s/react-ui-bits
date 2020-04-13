@@ -6,19 +6,33 @@ route: /src/components/molecules/textfield
 
 import { Playground, Props } from 'docz'
 import { TextField } from '@components/molecules'
+import { Button } from '@components/atoms'
 
-# Label
+# TextField
 
 <Props of={TextField} />
 
 ## Basic usage
 
 <Playground>
-    <TextField>Text comes here</TextField>
+    <TextField type="text" name="email" label="Email" />
 </Playground>
 
-## With Styles
+## Standard Input
 
 <Playground>
-    <TextField></TextField>
+    <TextField variant="standard" type="text" name="email" label="Email" />
+</Playground>
+
+## 
+Error property can be used to mark textfield when there are errors.
+
+<Playground>
+    <TextField variant="standard" type="text" name="email" label="Email" error/>
+</Playground>
+
+## Outlined Input
+
+<Playground>
+    <TextField variant="outlined" type="text" name="email" label="Email" />
 </Playground>

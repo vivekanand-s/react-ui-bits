@@ -55,7 +55,7 @@ Button.propTypes = {
      * Link to be provided if button is rendered as anchor
      */
     href: (props) => {
-        if(props.tagName && props.tagName.toLowerCase() === 'a' && !(props.href)) {
+        if((props.component && props.component.toLowerCase() === 'a') && !(props.href)) {
             throw new Error('href shoud be specified for <a> tag')
         }
     },
