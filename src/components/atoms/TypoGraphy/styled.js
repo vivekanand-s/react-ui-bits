@@ -6,7 +6,9 @@ const fontSizes = {
     'h3': '3rem',
     'h4': '2.125rem',
     'h5': '1.5rem',
-    'h6': '1rem'
+    'h6': '1rem',
+    'body1': '1rem',
+    'body2': '0.875rem'
 }
 
 const TypoGraphy = styled.p`
@@ -15,6 +17,8 @@ const TypoGraphy = styled.p`
     justify-content: center;
     margin: 0;
     padding: 0;
+    
+    ${props => props.styles}
 `
 
 export { TypoGraphy }

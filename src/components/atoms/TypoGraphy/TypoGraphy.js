@@ -34,7 +34,7 @@ TypoGraphy.propTypes = {
     /**
      * Font size of the paragraph
      */
-    variant: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
+    variant: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'body1', 'body2']),
     /**
      * Renders element with specifed tag
      */
