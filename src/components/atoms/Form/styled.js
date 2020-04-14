@@ -5,4 +5,4 @@ const Form = styled.form`
     width: ${props => props.width || '100%'};
 `
 
-export { Form }
+export const StyledForm = { Form }

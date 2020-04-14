@@ -15,7 +15,7 @@ const anchorprops = {
     children: 'TEST',
     color: 'primary',
     variant: 'contained',
-    tagName: 'a',
+    component: 'a',
     href: '/a'
 }
 

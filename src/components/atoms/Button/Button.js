@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import * as Styled from './styled'
+import { StyledButton as Styled } from './styled'
 import THEME from './theme' 
 
 /**

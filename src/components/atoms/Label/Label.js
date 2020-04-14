@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import * as Styled from './styled'
+import { StyledLabel as Styled } from './styled'
 
 /**
  * Label base component

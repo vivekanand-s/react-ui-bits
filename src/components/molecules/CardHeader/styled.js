@@ -10,4 +10,4 @@ const Wrapper = styled.div`
     ${props => props.styles};
 `
 
-export { Wrapper }
+export const StyledCardHeader = { Wrapper }

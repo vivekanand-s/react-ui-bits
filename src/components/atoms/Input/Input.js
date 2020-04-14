@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import * as Styled from './styled'
+import { StyledInput as Styled } from './styled'
 
 /**
  * Input base component

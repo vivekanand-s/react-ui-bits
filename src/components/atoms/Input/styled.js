@@ -17,4 +17,4 @@ const Input = styled.input`
     ${props => props.styles};
 `
 
-export { Input }
+export const StyledInput = { Input }

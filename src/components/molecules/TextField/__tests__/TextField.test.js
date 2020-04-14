@@ -28,7 +28,7 @@ describe('TexField Component Tests', () => {
         })
 
         it('renders label', () => {
-            expect(component.find('label').text()).toEqual('TEST')
+            expect(component.find('label').at(1).text()).toEqual('TEST')
         })
 
         it('checks onchange handler', () => {

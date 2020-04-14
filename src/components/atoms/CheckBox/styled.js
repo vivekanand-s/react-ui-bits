@@ -58,4 +58,4 @@ const CheckBoxWrapper = styled.span`
 	width: ${props => props.width};
 `
 
-export { SVGStyles, CheckBoxStyles, CheckBoxWrapper }
+export const StyledCheckBox = { SVGStyles, CheckBoxStyles, CheckBoxWrapper }

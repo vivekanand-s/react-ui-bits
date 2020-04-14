@@ -21,4 +21,4 @@ const TypoGraphy = styled.p`
     ${props => props.styles}
 `
 
-export { TypoGraphy }
+export const StyledTypoGraphy =  { TypoGraphy }

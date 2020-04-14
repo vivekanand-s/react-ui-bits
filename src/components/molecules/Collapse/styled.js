@@ -12,4 +12,4 @@ const InnerWrap = styled.div`
     display: flex;
 `
 
-export { Wrapper, InnerWrap }
+export const StyledCollapse = { Wrapper, InnerWrap }

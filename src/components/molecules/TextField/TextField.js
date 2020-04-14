@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import * as Styled from './styled'
+import { StyledTextField as Styled } from './styled'
 import {
     DefaultInput,
     StandardInput,

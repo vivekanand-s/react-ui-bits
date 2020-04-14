@@ -94,7 +94,7 @@ const Border = styled.span`
     transition: width .3s ease-in-out ;
 `
 
-export { 
+export const StyledTextField = { 
     Wrapper,
     Border,
     LabelStyles,

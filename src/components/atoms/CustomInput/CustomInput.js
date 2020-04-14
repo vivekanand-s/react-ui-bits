@@ -5,7 +5,7 @@ import {
     RoundedStyles
 } from './styled'
 import { Input } from '@components/atoms'
-import withStyles from '@config/withStyles'
+import withStyles from '@utils/withStyles'
 
 const DefaultInput = withStyles(Input, DefaultStyles)
 const StandardInput = withStyles(Input, StandardStyles)

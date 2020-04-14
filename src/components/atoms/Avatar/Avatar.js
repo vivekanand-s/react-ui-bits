@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import * as Styled from './styled'
+import { StyledAvatar as Styled } from './styled'
 
 const Avatar = React.forwardRef((props, ref) => {
     const {

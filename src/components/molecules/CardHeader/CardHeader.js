@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import * as Styled from './styled'
+import { StyledCardHeader as Styled } from './styled'
 import { TypoGraphy } from '@components/atoms'
-import { Avatar } from '@components/atoms/Avatar/styled'
 
 const Styles = {
     title: {

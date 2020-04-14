@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-import * as Styled from './styled'
+import { StyledCheckBox as Styled } from './styled'
 import { Label, Input } from '@components/atoms'
 
 //http://react.tips/checkboxes-in-react/
@@ -20,25 +20,31 @@ const CheckBox = React.forwardRef((props, ref) => {
         height = '18px',
         width = '18px',
         checked = false,
-        onChange = (event) => {
-            setChecked(check => !check)
-            handleCheckboxChange(event.target.value)
-        },
+        onChange,
         handleCheckboxChange = () => {},
         ...restprops
     } = props
     
     const [ isChecked, setChecked ] = useState(checked)
-    
     useEffect(()=> {
         (checked && !onChange) && handleCheckboxChange(value)
     },[])
+
+    const handleChange = (event) => {
+        if(onchange) {
+            onChange(event)
+        }
+        else {
+            setChecked(check => !check)
+            handleCheckboxChange(event.target.value)
+        }
+    }
 
     return (
         <Label ref={ref} data-test='input-checkbox' className={`checkbox ${className}`} styles={Styled.SVGStyles}>
             <Styled.CheckBoxWrapper height={height} width={width}>
                 <Input name={name} type="checkbox" value={value} 
-                    checked={isChecked} onChange={onChange} {...restprops} styles={Styled.CheckBoxStyles} />
+                    checked={isChecked} onChange={handleChange} {...restprops} styles={Styled.CheckBoxStyles} />
                 <svg viewBox="0 0 25 25">
                     <path d="M4.5 12.5 l4 4.5 11.5 -10" />
                 </svg>

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Transition } from 'react-transition-group'
 
-import * as Styled from './styled'
+import { StyledCollapse as Styled } from './styled'
 
 const Collapse = React.forwardRef((props, ref) => {
     const wref = React.useRef(null)

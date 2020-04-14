@@ -9,5 +9,4 @@ const Label = styled.label`
     ${props => props.styles}
 `
 
-export default Label
-export { Label }
+export const StyledLabel =  { Label }

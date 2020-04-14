@@ -2,7 +2,7 @@ import React from 'react'
 
 const withStyles = (Component, styles={}) => React.forwardRef((props, ref) => {
     
-  return <Component styles={styles}  {...props} />;
+  return <Component ref={ref} styles={styles}  {...props} />;
 
 });
 

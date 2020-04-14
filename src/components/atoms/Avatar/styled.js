@@ -21,4 +21,4 @@ const Avatar = styled.div`
     }
 `
 
-export { Avatar } 
+export const StyledAvatar = { Avatar } 

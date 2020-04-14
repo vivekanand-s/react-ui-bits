@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import * as Styled from './styled'
+import { StyledForm as Styled } from './styled'
 
 const Form = React.forwardRef((props, ref) => {
     const {
@@ -12,11 +12,12 @@ const Form = React.forwardRef((props, ref) => {
         name,
         onSubmit,
         children,
+        className = '',
         ...restprops
     } = props
 
     return(
-        <Styled.Form ref={ref} name={name} action={action} method={method} target={target} 
+        <Styled.Form ref={ref} data-test='form-root' className={`form ${className}`} name={name} action={action} method={method} target={target} 
             autoComplete={autoComplete} onSubmit={onSubmit} {...restprops}>
             {children}
         </Styled.Form>

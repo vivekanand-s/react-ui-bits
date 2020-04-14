@@ -37,4 +37,4 @@ const Button = styled.button`
     ${props => props.styles};
 `
 
-export { Button, ButtonLabel }
+export const StyledButton = { Button, ButtonLabel }

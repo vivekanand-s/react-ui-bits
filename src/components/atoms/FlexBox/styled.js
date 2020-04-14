@@ -21,4 +21,4 @@ const FlexBox = styled.div`
     ${props => props.styles}
 `
 
-export { FlexBox }
+export const StyledFlexBox = { FlexBox }

@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import * as Styled from './styled'
+import { StyledFlexBox as Styled } from './styled'
 
 const clsx = (container, item, className) => {
-    let cls = (container ? 'flex-container' : (item ? 'flex-item' : ''))
-    cls = `flexbox ${cls} ${className}`
+    let cls = (container ? 'container' : (item ? 'item' : ''))
+    cls = `flexbox flex-${cls} ${className}`
     return cls.trim()
 }
 

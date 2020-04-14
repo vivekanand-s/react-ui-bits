@@ -83,4 +83,4 @@ const SVGStyles = css`
 	}
 `
 
-export { RadioBtnStyles, SVGStyles, RadioWrapper }
+export const StyledRadioButton = { RadioBtnStyles, SVGStyles, RadioWrapper }
