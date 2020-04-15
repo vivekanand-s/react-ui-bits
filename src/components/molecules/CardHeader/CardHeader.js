@@ -20,7 +20,7 @@ const CardHeader = React.forwardRef((props, ref) => {
     } = props
 
     return(
-        <Styled.Wrapper ref={ref} {...restprops} styles={styles}>
+        <Styled.Wrapper ref={ref} data-test='cardheader-root' styles={styles} {...restprops}>
             {
                 avatar ? avatar : null
             }

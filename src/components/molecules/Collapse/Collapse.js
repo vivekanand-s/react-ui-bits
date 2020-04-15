@@ -29,7 +29,7 @@ const Collapse = React.forwardRef((props, ref) => {
     }
 
     return (
-            <Transition in={inProp} timeout={timeout} {...restprops} onEntering={handleEntering}>
+            <Transition in={inProp} timeout={timeout} onEntering={handleEntering} {...restprops}>
                 {state => (
                     <Styled.Wrapper data-test='collapse-root' ref={ref} timeout={timeout} 
                         className={`collapse clp-${state} ${className}`}style={{...transitionStyle[state]}}>
