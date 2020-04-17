@@ -1,0 +1,83 @@
+---
+name: Card
+menu: Organisms
+route: /src/components/organisms/card
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Avatar, TypoGraphy, Button } from '@components/atoms'
+import { CardHeader, Collapse } from '@components/molecules'
+import { Card } from '@components/organisms'
+
+# Card
+
+<Props of={Card} />
+
+
+## Basic Usage
+
+<Playground>
+    <Card>
+        <TypoGraphy styles={{ padding: '1em' }}>
+            This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.
+        </TypoGraphy>
+    </Card>
+</Playground>
+
+## With image
+
+<Playground>
+    <Card>
+        <img src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80' style={{width: '100%', height: '100%'}} />
+        <TypoGraphy styles={{ padding: '1em'}}>
+            This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.
+        </TypoGraphy>
+    </Card>
+</Playground>
+
+## With header
+
+<Playground>
+    <Card>
+        <CardHeader title="My Long Title" subtitle="Sub-Title Location" 
+            avatar= {
+                <Avatar>V</Avatar>
+            }
+        />
+        
+        <img src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80' style={{ width: '100%', height: '100%' }} />
+        <TypoGraphy styles={{ padding: '1em' }}>
+            This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.
+        </TypoGraphy>
+    </Card>
+</Playground>
+
+## With Collapse
+
+<Playground>
+    {() => {
+        const [expand, setExpand] = useState(false)
+        return (
+            <Card>
+                <CardHeader title="My Long Title" subtitle="Sub-Title Location" 
+                    avatar= {
+                        <Avatar>V</Avatar>
+                    }
+                />
+                
+                <img src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80' style={{ width: '100%', height: '100%' }} />
+                <TypoGraphy styles={{ padding: '1em' }}>
+                    This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                </TypoGraphy>
+                <Button onClick={() => setExpand(!expand)}>More</Button>
+                
+                <Collapse in={expand}>
+                    <TypoGraphy styles={{ padding: '1em' }}>
+                        Method:Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes.
+                    </TypoGraphy>
+                </Collapse>
+            </Card>
+        )
+    }}
+</Playground>

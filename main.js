@@ -1,29 +1,46 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
   
-import { Avatar } from '@components/atoms'
-import { CardHeader } from '@components/molecules'
+import { NavBar } from '@components/molecules'
+import { Header } from '@components/organisms'
 
-const style = {
-    root: {
-        boxShadow: '0 0 4px 0px rgba(0,0,0,0.25)' /* dont delete */
-    },
-    avatar: {
-        marginRight: '10px'
+const Nav = (props) => {
+
+    const [test, setValue] = useState('About')
+    const handleChange = () => {
+        setValue('Changed')
     }
+    const items = [{
+        name: 'about',
+        value: test,
+        events: {
+            onClick: handleChange
+        }
+    },
+    {
+        name: 'contact',
+        value: 'Contact',
+        link: '/contact'
+    },
+    {
+        name: 'Careers',
+        value: 'Careers'
+    }]
+
+    return (
+        <NavBar color='#fff' items={items} />
+    )
 }
 
 const App = (props) => {
 
-
     return(
-        <>  
-            <CardHeader title="My Long Title" subtitle="Sub-Title Location" styles={style.root} 
-                avatar= {
-                    <Avatar styles={style.avatar}>V</Avatar>
-                }
+        <Header 
+            logo="//avatarfiles.alphacoders.com/205/205044.jpg" 
+            logoalt="alt text" 
+            logotext="Logo"
+            navbar={<Nav />}
             />
-        </>
     )
 }
 

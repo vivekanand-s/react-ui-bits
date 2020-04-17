@@ -1,0 +1,79 @@
+---
+name: Collapse
+menu: Molecules
+route: /src/components/molecules/collapse
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Collapse } from '@components/molecules'
+import { Button, TypoGraphy } from '@components/atoms'
+
+# Collapse
+
+<Props of={Collapse} />
+
+## Basic Usage
+
+Collapse was build react-trasition-group, it supports all the functionalities of them.
+## 
+**Read more:** https://reactcommunity.org/react-transition-group/transition
+
+<Playground>
+    {() => {
+        const [expand, setExpand] = useState(false)
+        
+        return (
+            <>
+                <Button onClick={() => setExpand(!expand)}>More</Button>    
+                <Collapse in={expand}>
+                    <TypoGraphy styles={{ padding: '1em' }}>
+                        Method:Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes.
+                    </TypoGraphy>
+                </Collapse>
+            </>
+        )
+    }}
+</Playground>
+
+## With timeout
+
+`timeout` in **ms** property is used to set the transition duration.
+
+<Playground>
+    {() => {
+        const [expand, setExpand] = useState(false)
+        
+        return (
+            <>
+                <Button onClick={() => setExpand(!expand)}>More</Button>    
+                <Collapse in={expand} timeout={1000}>
+                    <TypoGraphy styles={{ padding: '1em' }}>
+                        Method:Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes.
+                    </TypoGraphy>
+                </Collapse>
+            </>
+        )
+    }}
+</Playground>
+
+## With unmountOnExit
+
+`unmountOnExit` property will unmount the component when it reaches *exited* state.
+
+<Playground>
+    {() => {
+        const [expand, setExpand] = useState(false)
+        
+        return (
+            <>
+                <Button onClick={() => setExpand(!expand)}>More</Button>    
+                <Collapse in={expand} unmountOnExit>
+                    <TypoGraphy styles={{ padding: '1em' }}>
+                        Method:Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes.
+                    </TypoGraphy>
+                </Collapse>
+            </>
+        )
+    }}
+</Playground>

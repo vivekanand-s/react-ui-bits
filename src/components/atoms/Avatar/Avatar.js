@@ -12,9 +12,11 @@ const Avatar = React.forwardRef((props, ref) => {
         styles,
         ...restprops
     } = props
+    const bg = (styles && styles.background ? styles.background : (src ? 'transparent' : ''))
 
     return(
-        <Styled.Avatar ref={ref} data-test='avatar-root' className={`avatar ${className}`} styles={styles} {...restprops}>
+        <Styled.Avatar ref={ref} data-test='avatar-root' className={`avatar ${className}`} 
+            background={bg} styles={styles} {...restprops}>
             {
                 src ? <img src={src} alt={alt} /> : children
             }

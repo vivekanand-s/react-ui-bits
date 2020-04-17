@@ -16,9 +16,11 @@ const FlexBox = styled.div`
         flex-grow: 0;
         flex-basis: ${props.xs}%;
         max-width: ${props.xs}%;
+        padding: 0.5rem;
+        box-sizing: border-box;
     `};
 
-    ${props => props.styles}
+    ${props => props.styles};
 `
 
 export const StyledFlexBox = { FlexBox }

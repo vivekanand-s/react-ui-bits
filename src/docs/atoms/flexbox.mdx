@@ -1,0 +1,38 @@
+---
+name: Flexbox
+menu: Atoms
+route: /src/components/atoms/flexbox
+---
+
+import { Playground, Props } from 'docz'
+import { FlexBox } from '@components/atoms'
+
+# Flexbox
+
+<Props of={FlexBox} />
+
+## Basic usage
+
+`Container` prop is render the component as flexbox container. `Item` prop will render component as flexbox child.
+
+<Playground>
+    <FlexBox container>
+        <FlexBox item>Item1</FlexBox>
+        <FlexBox item>Item2</FlexBox>
+    </FlexBox>
+</Playground>
+
+## Flexbox item size
+
+`xs` property can be set to change width of flex item. **Note:** The prop supports value between 1 and 12
+
+<Playground>
+    <FlexBox container>
+        <FlexBox item xs={6} styles={{border: '1px solid red'}}>Item1</FlexBox>
+        <FlexBox item xs={6} styles={{border: '1px solid red'}}>Item2</FlexBox>
+        <FlexBox item xs={6} styles={{border: '1px solid red'}}>Item2</FlexBox>
+        
+        <FlexBox item xs={3} styles={{border: '1px solid red'}}>Item1</FlexBox>
+        <FlexBox item xs={3} styles={{border: '1px solid red'}}>Item2</FlexBox>
+    </FlexBox>
+</Playground>

@@ -1,0 +1,23 @@
+---
+name: CardHeader
+menu: Molecules
+route: /src/components/molecules/cardheader
+---
+
+import { Playground, Props } from 'docz'
+import { Avatar } from '@components/atoms'
+import { CardHeader } from '@components/molecules'
+
+# CardHeader
+
+<Props of={CardHeader} />
+
+## Basic usage
+
+<Playground>
+    <CardHeader title="My Long Title" subtitle="Sub-Title Location" 
+        avatar= {
+            <Avatar>V</Avatar>
+        }
+    />
+</Playground>

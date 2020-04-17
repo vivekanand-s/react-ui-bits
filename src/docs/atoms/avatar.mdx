@@ -1,0 +1,32 @@
+---
+name: Avatar
+menu: Atoms
+path: /src/components/atoms/avatar
+---
+
+import { Playground,  Props } from 'docz'
+import { Avatar } from '@components/atoms'
+
+# Avatar
+
+<Props of={Avatar} />
+
+## Basic usage
+
+<Playground>
+    <Avatar>V</Avatar>
+</Playground>
+
+## With image
+
+The `src` property can be used to set avatar image.
+
+<Playground>
+    <Avatar src='//avatarfiles.alphacoders.com/205/205044.jpg' alt='avatar' />
+</Playground>
+
+## With custom background
+
+<Playground>
+    <Avatar background='rgb(220, 0, 78)'>V</Avatar>
+</Playground>

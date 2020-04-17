@@ -11,13 +11,13 @@ const Avatar = styled.div`
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    overflow: hidden;
     
-    ${props => props.styles}
+    ${props => props.styles};
 
     & img {
         height: 100%;
         width: 100%;
-        border-radius: 50%;
     }
 `
 
