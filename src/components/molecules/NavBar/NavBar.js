@@ -19,20 +19,21 @@ const NavBar = React.forwardRef((props, ref) => {
         className = '',
         styles,
         color,
+        background,
         ...restprops
     } = props
     
     return (
         <nav ref={ref} data-test='navbar-root' className={`navbar ${className}`} 
             style={styles} {...restprops}>
-            <Styled.UL color={color}>
+            <Styled.UL color={color} background={background}>
                 {
                     items.map((item, index) => (
-                        <Styled.LI key={index} className={`nav-link-${item.name}`} 
+                        <Styled.LI key={`${item.name}-${index}`} className={`nav-link-${item.name}`} 
                             {...item.events}
                         >
                             {item.link ? 
-                                <Styled.Anchor href={item.link}>{item.name}</Styled.Anchor> :
+                                <Styled.Anchor href={item.link}>{item.value}</Styled.Anchor> :
                                 item.value
                             }
                         </Styled.LI>

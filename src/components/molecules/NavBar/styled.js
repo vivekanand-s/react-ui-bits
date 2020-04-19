@@ -13,7 +13,8 @@ const UL = styled.ul`
 `
 
 const LI = styled.li`
-    padding: 1rem;
+    padding: 0.5rem;
+    margin: 0 1rem;
     display: inline-block;
     cursor: pointer;
 `

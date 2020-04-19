@@ -6,7 +6,50 @@ route: /src/components/organisms/header
 
 import { Playground, Props } from 'docz'
 import { Header } from '@components/organisms'
+import { NavBar } from '@components/molecules'
 
 # Header
 
 <Props of={Header} />
+
+## Basic usage
+
+The justify property is used to align header items and it accepts all values of justify-content property of flex-box. The default value is *space-between*.
+
+<Playground>
+    <Header 
+        logo="//avatarfiles.alphacoders.com/205/205044.jpg" 
+        logoalt="alt text" 
+        logotext="Logo"
+        justify="center"
+    />
+</Playground>
+
+## With NavBar
+
+<Playground>
+    {() => {
+        const items = [{
+            name: 'about',
+            value: "About"
+        },
+        {
+            name: 'contact',
+            value: 'Contact',
+            link: '/contact'
+        },
+        {
+            name: 'Careers',
+            value: 'Careers'
+        }]
+        
+        return (
+            <Header 
+                logo="//avatarfiles.alphacoders.com/205/205044.jpg" 
+                logoalt="alt text" 
+                logotext="Logo"
+                navbar={<NavBar color='#fff' items={items} />}
+            />
+        )
+    }}
+</Playground>

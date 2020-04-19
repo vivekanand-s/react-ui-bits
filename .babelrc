@@ -1,4 +1,8 @@
 {
-    "presets": ["@babel/env","@babel/react"],
-    "plugins": ["@babel/proposal-object-rest-spread", "react-remove-properties"]
+    "env": {
+      "production": {
+            "presets": ["@babel/env","@babel/react"],
+            "plugins": ["@babel/proposal-object-rest-spread", "react-remove-properties"]
+        }
+    }
 }
