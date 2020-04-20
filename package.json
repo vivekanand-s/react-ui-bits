@@ -8,7 +8,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --colors --hot --inline --open",
     "build": "webpack --mode production",
-    "test": "jest --watch",
+    "test": "set BABEL_ENV=development&& jest --watch",
     "dev": "npm-run-all --parallel start test",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
@@ -46,7 +46,7 @@
     "@babel/preset-react": "^7.8.3",
     "@types/jest": "^25.1.4",
     "@types/styled-components": "^5.0.1",
-    "babel-jest": "^25.1.0",
+    "babel-jest": "^25.3.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-react-remove-properties": "^0.3.0",
     "check-prop-types": "^1.1.2",

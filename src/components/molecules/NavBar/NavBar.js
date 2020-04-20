@@ -57,6 +57,14 @@ NavBar.propTypes = {
         })
     ),
     /**
+     * Background color of the navbar
+     */
+    background: PropTypes.string,
+    /**
+     * Text color for the navbar
+     */
+    color: PropTypes.string,
+    /**
      * Custom styles for the component
      */
     styles: PropTypes.oneOfType([
