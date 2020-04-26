@@ -52,11 +52,7 @@ CardHeader.propTypes = {
     /**
      * Custom styles for the component
      */
-    styles: PropTypes.object,
-    ref: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.element)})
-    ])
+    styles: PropTypes.object
 }
 
 export default CardHeader

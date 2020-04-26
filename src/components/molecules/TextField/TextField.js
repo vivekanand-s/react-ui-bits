@@ -91,10 +91,6 @@ TextField.propTypes = {
     styles: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.array
-    ]),
-    ref: PropTypes.oneOf([
-        PropTypes.func,
-        PropTypes.shape({current: PropTypes.instanceOf(PropTypes.Element)})
     ])
 }
 

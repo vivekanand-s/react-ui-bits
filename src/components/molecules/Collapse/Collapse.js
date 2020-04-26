@@ -61,11 +61,7 @@ Collapse.propTypes = {
     /**
      * If true, component will transition in
      */
-    in: PropTypes.bool,
-    ref: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.element) })
-    ])
+    in: PropTypes.bool
 }
 
 export default Collapse

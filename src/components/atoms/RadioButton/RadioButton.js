@@ -67,11 +67,7 @@ RadioButton.propTypes = {
     /**
      * Callback to change checked state
      */
-    onChange: PropTypes.func,
-    ref: PropTypes.oneOf([
-        PropTypes.func,
-        PropTypes.shape({current: PropTypes.instanceOf(PropTypes.Element)})
-    ])
+    onChange: PropTypes.func
 }
 
 export default RadioButton

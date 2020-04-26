@@ -9,7 +9,9 @@
     "start": "webpack-dev-server --progress --colors --hot --inline --open",
     "build": "webpack --mode production",
     "test": "set BABEL_ENV=development&& jest --watch",
+    "pdn": "set BABEL_ENV=production&& jest --watch",
     "dev": "npm-run-all --parallel start test",
+    "production": "set BABEL_ENV=production&&webpack-dev-server --progress --colors --hot --inline --open",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
     "docz:serve": "docz build && docz serve"

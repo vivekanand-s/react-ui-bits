@@ -86,11 +86,7 @@ CheckBox.propTypes = {
     /**
      * Handler to get selected checkbox values, if onchange handler is not specifed
      */
-    handleCheckboxChange: PropTypes.func,
-    // ref: PropTypes.oneOf([
-    //     PropTypes.func,
-    //     PropTypes.shape({current: PropTypes.instanceOf(Element)})
-    // ])
+    handleCheckboxChange: PropTypes.func
 }
 
 export default CheckBox

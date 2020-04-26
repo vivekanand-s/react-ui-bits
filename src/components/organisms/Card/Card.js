@@ -33,11 +33,7 @@ Card.propTypes = {
     /**
      * Width of the card
      */
-    width: PropTypes.string,
-    ref: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.elemenet)})
-    ])
+    width: PropTypes.string
 }
 
 export default Card

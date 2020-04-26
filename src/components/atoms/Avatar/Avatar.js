@@ -44,11 +44,7 @@ Avatar.propTypes = {
     /**
      * Color for avatar text
      */
-    color: PropTypes.string,
-    ref: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.element)})
-    ]) 
+    color: PropTypes.string
 }
 
 export default Avatar

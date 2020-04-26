@@ -18,14 +18,15 @@ const FlexBox = React.forwardRef((props, ref) => {
         item,
         xs,
         styles,
+        component = 'div',
         ...restprops
     } = props
-    const xs_width = (item && xs && xs >= 0 && xs <= 12) ? (xs / 12) * 100 : ''
+    const xs_width = (xs && xs >= 0 && xs <= 12) ? (xs / 12) * 100 : ''
     const cls = clsx(container, item, className)
 
     return(
        <Styled.FlexBox container={container} ref={ref} data-test='flexbox-root' xs={xs_width} 
-            className={cls} styles={styles} {...restprops}>
+            className={cls} styles={styles} as={component} {...restprops}>
            {children}
        </Styled.FlexBox>
     )
@@ -57,11 +58,7 @@ FlexBox.propTypes = {
     /**
      * Set the width of the flex item
      */
-    xs: PropTypes.number,
-    ref: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.shape({current: PropTypes.instanceOf(PropTypes.Element)})
-    ])
+    xs: PropTypes.number
 }
 
 export default FlexBox

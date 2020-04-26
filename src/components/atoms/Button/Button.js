@@ -62,11 +62,10 @@ Button.propTypes = {
     /**
      * Custom Styles for button
      */
-    styles: PropTypes.object,
-    ref: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.Element)})
-    ])
+    styles: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object
+    ]) 
 }
 
 export default Button

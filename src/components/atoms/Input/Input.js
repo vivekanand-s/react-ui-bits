@@ -84,11 +84,7 @@ Input.propTypes = {
     /**
      * If true, error animation will be shown
      */
-    error: PropTypes.bool,
-    ref: PropTypes.oneOf([
-        PropTypes.func,
-        PropTypes.shape({current: PropTypes.instanceOf(PropTypes.Element)})
-    ])
+    error: PropTypes.bool
 }
 
 export default Input

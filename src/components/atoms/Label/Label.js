@@ -35,10 +35,6 @@ Label.propTypes = {
     styles: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.array
-    ]),
-    ref: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.Element)})
     ])
 }
 
