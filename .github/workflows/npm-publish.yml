@@ -1,7 +1,8 @@
 name: NPM Publish
 on:
-  release:
-    types: [published, edited]
+  push:
+    branches: 
+      - master
 
 jobs:
   build:
