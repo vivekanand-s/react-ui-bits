@@ -5,14 +5,14 @@ on:
 
 jobs:
   tests:
-    name: Runs test cases
+    name: Running Test Cases
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - uses:  actions/setup-node@v1
+      - uses:  borales/actions-yarn@v2.0.0
         with:
-          node-version: 12
-      - run: npm ci
-      - run: npm run pdn:test
+          node-version: '12.x'
+      - run: yarn install --frozen-lockfile
+      - run: yarn run pdn:test
     
      
