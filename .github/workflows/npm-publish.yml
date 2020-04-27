@@ -4,15 +4,20 @@ on:
     types: [published, edited]
 
 jobs:
-  tests:
-    name: Running Test Cases
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
-      - run: npm install -g yarn
-      - run: |
-            yarn install --frozen-lockfile
-            yarn run pdn:test
+          node-version: 12.x
+      
+      - name: Installing yarn
+        run: npm install -g yarn
+        
+      - name: Installing dependencies
+        run: yarn install --frozen-lockfile
+      
+      - name: Running test cases
+        run: yarn run pdn:test
