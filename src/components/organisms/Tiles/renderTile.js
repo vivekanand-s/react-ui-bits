@@ -11,8 +11,7 @@ const renderImage = (content, defaults) => {
     const xs = (content.title || content.text) ? 6 : 12
 
     return (
-        <FlexBox item className='content-img' xs={xs} styles={Styled.TileItemStyles}>
-            <img src={content.image} alt={content.alt || ''} style={{width: '100%', height: '100%'}}/>
+        <FlexBox item xs={xs} className='content-img' styles={[Styled.TileItemStyles, Styled.TileImageStyles]} src={content.image}>
             {
                 checkTypeOf(content.btnOnHover, defaults.btnOnHover) && (
                     <Styled.Cover>

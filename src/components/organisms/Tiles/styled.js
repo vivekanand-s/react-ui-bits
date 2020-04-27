@@ -29,6 +29,15 @@ const TileItemStyles = css`
     `}
 `
 
+const TileImageStyles = css`
+    width: 50%;
+    background-image: url(${props => props.src});
+    background-color: #999;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+` 
+
 const LeftArrow = styled.span`
     width: 0;
     height: 0;
@@ -62,4 +71,4 @@ const ButtonStyles = css`
     border-color: #fff;
 `
 
-export const StyledTiles = { TileStyles, TileItemStyles, LeftArrow, RightArrow, ButtonStyles, Cover }
+export const StyledTiles = { TileStyles, TileItemStyles, LeftArrow, RightArrow, ButtonStyles, Cover, TileImageStyles }

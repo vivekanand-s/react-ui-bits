@@ -5,7 +5,6 @@ import { Tiles } from '@components/organisms'
 
 const App = (props) => {
     const items = {
-        btnOnHover: false, 
         showArrow: true,
         reverse: true,
         btnOnHover: true,
