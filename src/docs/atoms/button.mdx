@@ -1,0 +1,47 @@
+---
+name: Button
+menu: Atoms
+route: /src/components/atoms/button
+---
+
+import { Playground, Props } from 'docz'
+import { Button } from '@components/atoms' 
+
+# Button
+
+<Props of={Button} />
+
+## Basic usage
+
+Button will be created with **defaults** variant styles.
+
+<Playground>
+    <Button onClick={()=>alert("Button Clicked")}>Click Me</Button>
+</Playground>
+
+## Contained
+
+<Playground>
+    <Button variant="contained" color="primary" >Click Me</Button>
+    <Button variant="contained" color="defaults" styles={{margin: '0 10px'}} >Click Me</Button>
+    <Button variant="contained" color="disabled">Click Me</Button>
+</Playground>
+
+## Outlined
+
+`styles` prop is used to apply style to the component.
+
+<Playground>
+    <Button variant="outlined" color="primary" >Click Me</Button>
+    <Button variant="outlined" color="defaults" styles={{margin: '0 10px'}}>Click Me</Button>
+    <Button variant="outlined" color="disabled">Click Me</Button>
+</Playground>
+
+## Anchors
+
+By passing `component` property as **a**, button will be rendered as anchor element.
+`Note:`**href** prop is required if anchor element needs to be created.
+
+<Playground>
+    <Button color="primary" component="a" href="/link">Click Me</Button>
+</Playground>

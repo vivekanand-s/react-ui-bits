@@ -1,0 +1,54 @@
+---
+name: CheckBox
+menu: Atoms
+route: /src/components/atoms/checkbox
+---
+
+import { Playground, Props } from 'docz'
+import { CheckBox } from '@components/atoms'
+
+# Label
+
+<Props of={CheckBox} />
+
+## Basic usage
+
+<Playground>
+    <CheckBox name="gender" value="male" label="Male" />
+</Playground>
+
+
+## Selected CheckBox
+
+By passing **true** to the `checked` prop, the checkbox will be selected.
+
+<Playground>
+    <CheckBox name="gender" value="male" label="Male" checked={true} />
+</Playground>
+
+## Handle CheckBox Change
+
+The Checkbox have `onChange` functionality built-in, the selected value will be retuned to **handleCheckboxChange** handler passed as prop.
+
+<Playground>
+    <CheckBox name="gender" value="male" label="Male" checked={true} handleCheckboxChange={(label) => {console.log(label)}} />
+    <CheckBox name="gender" value="female" label="Female" handleCheckboxChange={(label) => {console.log(label)}} />
+    <CheckBox name="gender" value="other" label="Other" handleCheckboxChange={(label) => {console.log(label)}} />
+</Playground>
+
+## 
+
+The default `onChange` functionality can be overwridden by passing method to `onChange` prop.
+
+<Playground>
+    <CheckBox name="gender" value="male" label="Male" checked={true} onChange={() => {alert('CheckBox Clicked')}} />
+    <CheckBox name="gender" value="female" label="Female" onChange={() => {alert('CheckBox Clicked')}} />
+</Playground>
+
+## Height & Width
+
+`Height` and `Width` props are used to change checkbox size.
+
+<Playground>
+    <CheckBox name="gender" value="male" label="Male" checked={true} height="30px" width="30px" />
+</Playground>

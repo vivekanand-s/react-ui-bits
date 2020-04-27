@@ -1,72 +1,99 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import { TextField, CheckBox, RadioButton }  from '@components/Inputs'
-import Button  from '@components/Button'
-import TypoGraphy from '@components/TypoGraphy'
+  
+import { Tiles } from '@components/organisms'
 
-
-const styles = {
-    margin: '10px'
-}
-
-const selects = new Set()
-
-const App = () => {
-
-    const [ value ,setValue ] = useState('')
-
-    const [ selectedVal, setSelectedVal ] = useState('female')
-    const handleChange = (event) => {
-        setSelectedVal(event.target.value)
+const App = (props) => {
+    const items = {
+        showArrow: true,
+        reverse: true,
+        btnOnHover: true,
+        contents: [{
+            column: 1,
+            image: 'https://image.shutterstock.com/image-photo/four-red-telephone-boxes-on-600w-117337690.jpg',
+            alt: 'alt text',
+            title: 'Title',
+            text: 'Content of the tile',
+            link: '/link',
+            className: 'first-tile',
+            btnOnHover: false,
+            button: {
+                name: 'Learn More'
+            }
+        },
+        {
+            column: 2,
+            image: 'https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687',
+            alt: 'alt text',
+            title: 'Title',
+            text: 'Content of the tile',
+            link: '/link',
+            reverse: true,
+            bgcolor: '#707070',
+            className: 'first-tile',
+            button: {
+                name: 'Learn More',
+                events: {
+                    onMouseOver: () => alert()
+                }
+            }
+        },
+        {
+            column: 2,
+            image: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg',
+            alt: 'alt text',
+            title: 'Title',
+            text: 'Content of the tile',
+            link: '/link',
+            className: 'first-tile',
+            button: {
+                name: 'Learn More',
+            }
+        },
+        {
+            column: 3,
+            image: 'https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687',
+            alt: 'alt text',
+            title: 'Title 3',
+            text: 'Content of the tile',
+            link: '/link',
+            bgcolor: '#707070',
+            className: 'first-tile',
+            reverse: false,
+            button: {
+                name: 'Learn More'
+            }
+        },
+        {
+            column: 3,
+            image: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg',
+            alt: 'alt text',
+            title: 'Title',
+            text: 'Content of the tile',
+            link: '/link',
+            className: 'first-tile',
+            button: {
+                name: 'Learn More'
+            }
+        },
+        {
+            image: 'https://image.shutterstock.com/image-photo/four-red-telephone-boxes-on-600w-117337690.jpg',
+            alt: 'alt text',
+            title: 'Title',
+            bgcolor: '#707070',
+            text: 'Content of the tile',
+            link: '/link',
+            className: 'first-tile', 
+            showArrow: true,
+            reverse: false,
+            button: {
+                name: 'Learn More'
+            }
+        }]
     }
-
-    const handleCheckBox = label => {
-        if(selects.has(label)) {
-            selects.delete(label)
-        }
-        else {
-            selects.add(label)
-        }
-    }
-
-    return (
-        <React.Fragment>
-            <div style={styles}>
-                <TextField  value={value} onChange={(e) => setValue(e.target.value)} label='Email' variant="default" error />
-                <TextField type="password" value={value} onChange={(e) => setValue(e.target.value)} label='Password' variant="standard" error />
-                <TextField  value={value} onChange={(e) => setValue(e.target.value)} label='Password' variant="outlined" error />
-                <TextField label='Email' onChange={(e) => setValue(e.target.value)} variant="default" />
-                <TextField label='Password' value={value} onChange={(e) => setValue(e.target.value)} variant="standard" />
-                <TextField label='Password'value={value} onChange={(e) => setValue(e.target.value)}  variant="outlined" className="test-class"/>
-            </div>
-
-            <div style={styles}>
-                <Button color="primary" variant="contained" tagName="a" href="/a">PRIMARY</Button>
-                <Button color="disabled" variant="defaults">OUTLINED</Button>
-                <Button variant="defaults">DEFAULT</Button>
-            </div>
-
-            <div style={styles}>
-                <TypoGraphy>h1</TypoGraphy>
-                <TypoGraphy variant='h2'>h2</TypoGraphy>
-                <TypoGraphy variant='h5'>h6</TypoGraphy>
-                <TypoGraphy component='h2'>h1</TypoGraphy>
-                <TypoGraphy component='div'>h1</TypoGraphy>
-            </div>
-
-            <div style={styles}>
-                <CheckBox name='gender' value='male' label='Male' checked={true} handleCheckboxChange={handleCheckBox} />
-                <CheckBox name='gender' value='female' label='Female' checked={true} handleCheckboxChange={handleCheckBox} />
-                <CheckBox name='gender' value='other' label='Other' handleCheckboxChange={handleCheckBox} />
-            </div>
-
-            <div style={styles}>
-                <RadioButton name='gender' value='male' label='Male' checked={selectedVal} onChange={handleChange} />
-                <RadioButton name='gender' value='female' label='Female' checked={selectedVal} onChange={handleChange} />
-                <RadioButton name='gender' value='other' label='Other' checked={selectedVal} onChange={handleChange} />
-            </div>
-            
-        </React.Fragment>
+    
+    return(
+        <Tiles items={items} />
     )
 }
 

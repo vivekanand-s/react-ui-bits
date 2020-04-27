@@ -1,0 +1,70 @@
+---
+name: NavBar
+menu: Molecules
+route: /src/components/molecules/navbar
+---
+
+import { Playground, Props } from 'docz'
+import { useState } from 'react'
+import { NavBar } from '@components/molecules'
+
+# NavBar
+
+<Props of={NavBar} />
+
+## Basic usage
+
+NavBar takes `items` prop as array of objects to render navigation items. If passed with *link* property, nav item will be rendered in anchor tag.
+
+<Playground>
+    {() => {
+        const items = [{
+            name: 'about',
+            value: "About"
+        },
+        {
+            name: 'contact',
+            value: 'Contact',
+            link: '/contact'
+        },
+        {
+            name: 'Careers',
+            value: 'Careers'
+        }]
+        return (
+            <NavBar items={items} />
+        )
+    }}
+</Playground>
+
+## With events
+
+The **events** object take __event as key__ and __handler as value__ to bind event to the nav item. To verify click the *About* item or hover over the Contact link.
+
+<Playground>
+    {() => {
+        const [value, setValue] = useState('About') 
+        const items = [{
+            name: 'about',
+            value: value,
+            events: {
+                onClick: () => setValue('Changed')
+            }
+        },
+        {
+            name: 'contact',
+            value: 'Contact',
+            link: '/contact',
+            events: {
+                onMouseOver: () => { alert('Hover') }
+            }
+        },
+        {
+            name: 'Careers',
+            value: 'Careers'
+        }]
+        return (
+            <NavBar background="rgb(220, 0, 78)" color="#fff" items={items} />
+        )
+    }}
+</Playground>

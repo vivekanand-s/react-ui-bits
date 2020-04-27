@@ -1,0 +1,158 @@
+---
+name: Tiles
+menu: Organisms
+route: /src/components/organisms/tiles
+---
+
+import { Playground, Props } from 'docz'
+import { Tiles } from '@components/organisms'
+
+# Tiles
+
+<Props of={Tiles} />
+
+## Basic uage
+
+`column` property on each content will specify which column the content should appear. If not specified each content will appear in new column.
+
+`showArrow` property will add arrow to all the tiles. If `showArrow` is specified for particular content that value will be taken.
+In the below example, all the tiles have arrow except second tile.
+
+<Playground>
+    {()=> {
+        const items = {
+            showArrow: true,
+            contents: [{
+                column: 1,
+                image: 'https://image.shutterstock.com/image-photo/four-red-telephone-boxes-on-600w-117337690.jpg',
+                alt: 'alt text',
+                title: 'Title',
+                text: 'Content of the tile',
+                link: '/link',
+                className: 'first-tile',
+            },
+            {
+                column: 2,
+                image: 'https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687',
+                alt: 'alt text',
+                title: 'Title',
+                text: 'Content of the tile',
+                link: '/link',
+                bgcolor: '#707070',
+                className: 'second-tile',
+                showArrow: false
+            },
+            {
+                column: 2,
+                image: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg',
+                alt: 'alt text',
+                title: 'Title',
+                text: 'Content of the tile',
+                link: '/link',
+                className: 'third-tile'
+            }]
+        }
+        return (
+            <Tiles items={items} />
+        )}
+    }
+</Playground>
+
+## With Button
+
+`btnOnHover` property will show button on each tiles. Like earlier, if specified inside content that value will be taken.
+Since btnOnHover is set to false on second content, button won't be shown.
+
+<Playground>
+    {()=> {
+        const items = {
+            showArrow: true,
+            btnOnHover: true,
+            contents: [{
+                column: 1,
+                image: 'https://image.shutterstock.com/image-photo/four-red-telephone-boxes-on-600w-117337690.jpg',
+                alt: 'alt text',
+                title: 'Title',
+                text: 'Content of the tile',
+                link: '/link',
+                className: 'first-tile',
+                button: {
+                    name: 'Learn More',
+                    events: {
+                        onMouseOver: () => alert()
+                    }
+                }
+            },
+            {
+                column: 2,
+                image: 'https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687',
+                alt: 'alt text',
+                title: 'Title',
+                text: 'Content of the tile',
+                link: '/link',
+                bgcolor: '#707070',
+                className: 'second-tile',
+                showArrow: false,
+                btnOnHover: false,
+                button: {
+                    name: 'Learn More',
+                    events: {
+                        onMouseOver: () => alert()
+                    }
+                }
+            }]
+        }
+        return (
+            <Tiles items={items} />
+        )}
+    }
+</Playground>
+
+## With Content on left
+
+By default image will be shown on left side and content will be shown on right side. If `reverse` is set to true, content will be shown on left.
+
+<Playground>
+    {()=> {
+        const items = {
+            showArrow: true,
+            reverse: true,
+            contents: [{
+                column: 1,
+                image: 'https://image.shutterstock.com/image-photo/four-red-telephone-boxes-on-600w-117337690.jpg',
+                alt: 'alt text',
+                title: 'Title',
+                text: 'Content of the tile',
+                link: '/link',
+                className: 'first-tile',
+                btnOnHover: true,
+                button: {
+                    name: 'Learn More'
+                }
+            },
+            {
+                column: 2,
+                image: 'https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687',
+                alt: 'alt text',
+                title: 'Title',
+                text: 'Content of the tile',
+                link: '/link',
+                bgcolor: '#707070',
+                className: 'second-tile'
+            },
+            {
+                column: 2,
+                image: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg',
+                alt: 'alt text',
+                title: 'Title',
+                text: 'Content of the tile',
+                link: '/link',
+                className: 'third-tile',
+                reverse: false,
+            }]
+        }
+        return (
+            <Tiles items={items} />
+        )}
+    }
+</Playground>

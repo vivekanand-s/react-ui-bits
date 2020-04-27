@@ -1,0 +1,37 @@
+---
+name: TextField
+menu: Molecules
+route: /src/components/molecules/textfield
+---
+
+import { Playground, Props } from 'docz'
+import { TextField } from '@components/molecules'
+
+# TextField
+
+<Props of={TextField} />
+
+## Basic usage
+
+<Playground>
+    <TextField type="text" name="email" label="Email" />
+</Playground>
+
+## Standard Input
+
+<Playground>
+    <TextField variant="standard" type="text" name="email" label="Email" />
+</Playground>
+
+## 
+Error property can be used to mark textfield when there are errors.
+
+<Playground>
+    <TextField variant="standard" type="text" name="email" label="Email" error/>
+</Playground>
+
+## Outlined Input
+
+<Playground>
+    <TextField variant="outlined" type="text" name="email" label="Email" />
+</Playground>

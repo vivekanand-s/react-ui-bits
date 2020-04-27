@@ -4,8 +4,9 @@
       "baseUrl": ".",
       "jsx": "react",
       "paths": {
-        "@components/*": ["src/Components/*"],
-        "@utils/*": ["src/Utils/*"]
+        "@components/*": ["src/components/*"],
+        "@utils/*": ["src/utils/*"],
+        "@config/*": ["src/config/*"]
       }
     },
     "exclude": ["node_modules"]
