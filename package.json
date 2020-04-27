@@ -8,30 +8,13 @@
   "scripts": {
     "start": "webpack-dev-server --progress --colors --hot --inline --open",
     "build": "webpack --mode production",
-    "test": "set BABEL_ENV=development&& jest --watch",
-    "pdn": "set BABEL_ENV=production&& jest --watch",
-    "dev": "npm-run-all --parallel start test",
+    "dev:test": "set BABEL_ENV=development & jest --watch --config=jest.config.js --rootDir",
+    "pdn:test": "jest --config=jest.config.js",
+    "dev": "npm-run-all --parallel start dev:test",
     "production": "set BABEL_ENV=production&&webpack-dev-server --progress --colors --hot --inline --open",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
     "docz:serve": "docz build && docz serve"
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "setupFiles": [
-      "./src/setupTests.js"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules",
-      ".docz"
-    ],
-    "moduleNameMapper": {
-      "^@utils(.*)$": "<rootDir>/src/utils$1",
-      "^@components(.*)$": "<rootDir>/src/components$1",
-      "^@config(.*)$": "<rootDir>/src/config$1"
-    }
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
