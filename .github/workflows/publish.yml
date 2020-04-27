@@ -1,3 +1,18 @@
 name: Publish NPM Package
 on:
   release:
+    types: [created]
+
+jobs:
+  tests:
+    name: Runs test cases
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses:  actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm run pdn:test
+    
+     
