@@ -31,4 +31,6 @@ jobs:
         run: yarn install --frozen-lockfile
       
       - name: Test cases
-        run: yarn run pdn:test
+        run: |
+          ls
+          yarn run pdn:test
