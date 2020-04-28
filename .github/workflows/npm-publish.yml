@@ -32,19 +32,3 @@ jobs:
       
       - name: Test cases
         run: yarn run pdn:test
-  publish-npm:
-    name: Publish to NPM
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-          registry-url: https://registry.npmjs.org/
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Publish
-        run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
