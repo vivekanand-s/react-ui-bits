@@ -28,11 +28,15 @@ jobs:
             
       - name: Install dependencies(cache)
         if: steps.yarn-cache.outputs.cache-hit == 'true'
-        run: yarn install --frozen-lockfile --ignore-optional --offline
+        run: |
+          yarn policies set-version
+          yarn install --frozen-lockfile --ignore-optional --offline
         
       - name: Install dependencies(network)
         if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile --ignore-optional
+        run: |
+          yarn policies set-version
+          yarn install --frozen-lockfile --ignore-optional
       
       - name: Test cases
         run: yarn run pdn:test
