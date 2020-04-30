@@ -26,17 +26,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
             
-      - name: Install dependencies(cache)
-        if: steps.yarn-cache.outputs.cache-hit == 'true'
-        run: |
-          yarn policies set-version
-          yarn install --frozen-lockfile --ignore-optional --offline
-        
-      - name: Install dependencies(network)
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: |
-          yarn policies set-version
-          yarn install --frozen-lockfile --ignore-optional
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --ignore-optional --offline
       
       - name: Test cases
         run: yarn run pdn:test
