@@ -16,9 +16,8 @@ jobs:
           
       - name: Get yarn cache directory
         id: yarn-cache-dir-path
-        run: |
-          echo "::set-output name=dir::$(yarn cache dir)"
-          echo "Tag version === ${GITHUB_REF#refs/*/v}"
+        run: echo "::set-output name=dir::$(yarn cache dir)" 
+        
       - uses: actions/cache@v1
         id: yarn-cache
         with:
@@ -47,6 +46,9 @@ jobs:
       
       - name: Install dependencies
         run: yarn install --frozen-lockfile --ignore-optional
+      
+      - name: Get publish version
+        run: echo "Tag version === ${GITHUB_REF#refs/*/v}"
       
       - name: Publish
         run: yarn publish --new-version ${GITHUB_REF#refs/*/v} --access public
