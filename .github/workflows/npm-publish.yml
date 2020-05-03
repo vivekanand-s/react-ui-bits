@@ -1,8 +1,8 @@
 name: NPM Publish
 on:
   push:
-    branches: 
-      - master
+    tags: 
+      - v*.*.*
 
 jobs:
   build:
@@ -27,7 +27,45 @@ jobs:
             ${{ runner.os }}-yarn-
             
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --ignore-optional --offline
+        run: yarn install --frozen-lockfile --ignore-optional
       
       - name: Test cases
         run: yarn run pdn:test
+  
+  publish-npm:
+    name: NPM publish
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+          registry-url: https://registry.npmjs.org/
+      
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --ignore-optional
+      
+      - name: Publish
+        run: yarn publish --new-version ${GITHUB_REF#refs/*/}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets. NPM_TOKEN}}
+        
+  publish-gpr:
+    name: Registry Publish
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions.setup-node@v1
+        with:
+          node-version: 12.x
+          registry-url: https://npm.pkg.github.com/
+      
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --ignore-optional
+      
+      - name: Publish
+        run: yarn publish --new-version ${GITHUB_REF#refs/*/}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets. GHUB_TOKEN}}
