@@ -1,31 +1,36 @@
-# REACT-UI_BITS #
+# REACT-UI-BITS #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+React components for faster and easier web development. For components usage <a href='http://ec2-3-22-175-170.us-east-2.compute.amazonaws.com/'>visit</a>
 
-### What is this repository for? ###
+## Installation
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+```sh
 
-### How do I get set up? ###
+//Using npm
+npm i react-ui-bits
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+//Using yarn
+yarn add react-ui-bits
 
-### Contribution guidelines ###
+```
 
-* Writing tests
-* Code review
-* Other guidelines
+## Usage
 
-### Who do I talk to? ###
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { CheckBox } from react-ui-bits
 
-* Repo owner or admin
-* Other community or team contact
+function App() {
+  return (
+    <CheckBox name="gender" value="male" label="Male" checked={true} />
+  );
+}
 
-https://www.docker.com/blog/tips-for-deploying-nginx-official-image-with-docker/
+ReactDOM.render(<App />, document.getElementById('app'));
+
+```
+
+### Roadmap
+
+Since this is a test component library, it have very few components. Will add more useful components in future. 
