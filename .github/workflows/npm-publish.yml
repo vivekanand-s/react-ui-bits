@@ -16,8 +16,9 @@ jobs:
           
       - name: Get yarn cache directory
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
+        run: |
+          echo "::set-output name=dir::$(yarn cache dir)"
+          echo "Tag version === ${GITHUB_REF#refs/*/"
       - uses: actions/cache@v1
         id: yarn-cache
         with:
