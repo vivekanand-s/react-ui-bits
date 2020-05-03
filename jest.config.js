@@ -11,11 +11,7 @@ module.exports = {
     ],
     "testPathIgnorePatterns": [
         "/node_modules",
-        ".docz"
-    ],
-    "moduleNameMapper": {
-        "^@utils(.*)$": "<rootDir>/src/utils$1",
-        "^@components(.*)$": "<rootDir>/src/components$1",
-        "^@config(.*)$": "<rootDir>/src/config$1"
-    }
+        ".docz",
+        "/lib"
+    ]
 }
