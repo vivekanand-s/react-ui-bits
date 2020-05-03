@@ -5,17 +5,11 @@ module.exports = {
     entry: ['@babel/polyfill', './main.js'],
     output: {
         path: path.join(__dirname, '/bundle'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        libraryTarget: 'commonjs2'
     },
     devServer:{
         historyApiFallback: true
-    },
-    resolve: {
-        alias: {
-            '@components': path.resolve(__dirname, 'src/components'),
-            '@utils': path.resolve(__dirname, 'src/utils'),
-            '@config': path.resolve(__dirname, 'src/config')
-        }
     },
     module: {
         rules: [
@@ -26,6 +20,10 @@ module.exports = {
             }
         ]
     },
+    externals: {
+        'react': 'commonjs react',
+        'react-dom': 'commonjs react-dom',
+     },
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html'

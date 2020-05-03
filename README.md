@@ -27,3 +27,5 @@ This README would normally document whatever steps are necessary to get your app
 
 * Repo owner or admin
 * Other community or team contact
+
+https://www.docker.com/blog/tips-for-deploying-nginx-official-image-with-docker/
