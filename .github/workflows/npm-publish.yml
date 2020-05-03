@@ -48,7 +48,7 @@ jobs:
         run: yarn install --frozen-lockfile --ignore-optional
       
       - name: Publish
-        run: yarn publish --new-version ${GITHUB_REF#refs/*/}
+        run: yarn publish --new-version ${GITHUB_REF#refs/*/} --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets. NPM_TOKEN}}
         
@@ -68,6 +68,6 @@ jobs:
         run: yarn install --frozen-lockfile --ignore-optional
       
       - name: Publish
-        run: yarn publish --new-version ${GITHUB_REF#refs/*/}
+        run: yarn publish --new-version ${GITHUB_REF#refs/*/} --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets. GHUB_TOKEN}}
