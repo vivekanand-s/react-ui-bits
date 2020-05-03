@@ -63,10 +63,5 @@
     "components",
     "ui",
     "styled"
-  ],
-  "workspaces": {
-    "nohoist": [
-      "react", "react-dom"
-    ]
-  }
+  ]
 }
