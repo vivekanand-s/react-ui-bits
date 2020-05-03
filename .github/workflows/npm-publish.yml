@@ -50,6 +50,9 @@ jobs:
       - name: Get publish version
         run: echo "Tag version === ${GITHUB_REF#refs/*/v}"
       
+      - name: Yarn build
+        run: yarn build
+      
       - name: Publish
         run: yarn publish --new-version ${GITHUB_REF#refs/*/v} --access public
         env:
