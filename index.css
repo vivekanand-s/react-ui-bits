@@ -10,6 +10,7 @@ body {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 ::placeholder { /* Firefox, Chrome, Opera */ 
     color: #cccccc; 

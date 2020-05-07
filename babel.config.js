@@ -11,14 +11,17 @@ const plugins = [
         alias
     }]
 ]
+const ignore =  ["**/*.test.js"]
 
 if(process.env["BABEL_ENV"] === "production") {
     plugins.push(["react-remove-properties", {
         "properties": ["data-test"]
     }])
+    presets.push("minify")
 }
 
 module.exports = {
     presets,
-    plugins
+    plugins,
+    ignore
 }

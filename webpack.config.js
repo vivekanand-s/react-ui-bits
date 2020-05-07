@@ -4,9 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: ['@babel/polyfill', './main.js'],
     output: {
-        path: path.join(__dirname, '/bundle'),
-        filename: 'bundle.js',
-        libraryTarget: 'commonjs2'
+        path: path.join(__dirname, '/dist'),
+        filename: 'bundle.js'
     },
     devServer:{
         historyApiFallback: true
@@ -15,15 +14,11 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                exclude: /node_modules/,
+                exclude: /(node_modules|__tests__)/,
                 loader: 'babel-loader'
             }
         ]
     },
-    externals: {
-        'react': 'commonjs react',
-        'react-dom': 'commonjs react-dom',
-     },
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html'

@@ -2,9 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { StyledTiles as Styled } from './styled'
-import { renderImage, renderContent, checkTypeOf } from './renderTile'
 import { FlexBox } from '@components/atoms'
-import { PRIMARY_COLOR, PRIMARY_BTN_COLOR } from '@config/styles'
+import { TileImage,  TileContent } from '@components/molecules'
 
 /* Function that combines content with same column into single array */
 const aggregateContents = (contents) => {
@@ -20,45 +19,53 @@ const aggregateContents = (contents) => {
     return aggregatedItems
 }
 
+const checkTypeOf = (content, defaults) => {
+    return typeof(content) !== 'undefined' ? content : defaults
+}
+
 const Tiles = React.forwardRef((props, ref) => {
     const {
-        items: { 
-            bgcolor = PRIMARY_COLOR,
-            color = PRIMARY_BTN_COLOR,
+        items: {
+            bgcolor,
+            color,
             btnOnHover = false,
             showArrow = false,
             reverse = false,
-            contents = []
+            contents = [],
+            ...restprops
         },
         className = 'tiles'
     } = props
     const aggregatedItems = aggregateContents(contents)
 
-    return(
-        <FlexBox container ref={ref} data-test='tiles-root' className={className}>
+    return (
+        <FlexBox container ref={ref} data-test='tiles-root' className={className} {...restprops}>
             {
                 Object.entries(aggregatedItems).map(([key, value], index) => (
                     <FlexBox container key={index} className={`col-${key}`} styles={Styled.TileStyles} wrap='wrap'>
                         {
-                            value.map((content, index) => (
-                                <FlexBox container key={`${content.colum}${index}`} className={content.className}  href={content.link || '#'} 
-                                    component='a' background={content.bgcolor || bgcolor} Color={content.color || color} 
-                                    reverse={checkTypeOf(content.reverse, reverse)} btnOnHover={checkTypeOf(content.btnOnHover, btnOnHover)}
-                                    styles={[Styled.TileItemStyles, {width: '100%', minHeight: '200px'} ,content.styles]}>
-                                    {
-                                        content.image && renderImage(content, {
-                                            btnOnHover
-                                        })
-                                    }
-                                    {
-                                        (content.title || content.text) && renderContent(content, {
-                                            bgcolor,
-                                            showArrow,
-                                            reverse
-                                        })
-                                    }
-                                </FlexBox>
-                            ))
+                            value.map((content, index) => {
+                                const xs = (content.image ? 6 : 12)
+                                const flex_reverse = checkTypeOf(content.reverse || reverse)
+                                const showBtnOnHover = checkTypeOf(content.btnOnHover || btnOnHover)
+                                const arrow = checkTypeOf(content.showArrow || showArrow)
+
+                                return (
+                                    <FlexBox container key={index} className={content.className} href={content.link || '#'} background={content.bgcolor || bgcolor} 
+                                    Color={content.color || color} reverse={flex_reverse} component='a' 
+                                    styles={[Styled.TileItemStyles, content.styles]}>
+                                        {
+                                            content.image && 
+                                                <TileImage xs={xs} content={content.button} imageurl={content.image} alt={content.alt}
+                                                btnOnHover={showBtnOnHover} />
+                                        }
+                                        {   
+                                            (content.text || content.title) &&
+                                                <TileContent xs={xs} title={content.title} text={content.text} reverse={flex_reverse} showArrow={arrow}/>
+                                        }    
+                                    </FlexBox>
+                                )
+                            })
                         }
                     </FlexBox>
                 ))
