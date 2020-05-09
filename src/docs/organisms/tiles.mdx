@@ -29,6 +29,8 @@ In the below example, all the tiles have arrow except second tile.
                 title: 'Title',
                 text: 'Content of the tile',
                 link: '/link',
+                bgcolor: '#1976d2',
+                color: '#fff',
                 className: 'first-tile',
             },
             {
@@ -39,8 +41,7 @@ In the below example, all the tiles have arrow except second tile.
                 text: 'Content of the tile',
                 link: '/link',
                 bgcolor: '#707070',
-                className: 'second-tile',
-                showArrow: false
+                className: 'second-tile'
             },
             {
                 column: 2,
@@ -49,7 +50,8 @@ In the below example, all the tiles have arrow except second tile.
                 title: 'Title',
                 text: 'Content of the tile',
                 link: '/link',
-                className: 'third-tile'
+                className: 'third-tile',
+                showArrow: false
             }]
         }
         return (
@@ -76,6 +78,7 @@ Since btnOnHover is set to false on second content, button won't be shown.
                 text: 'Content of the tile',
                 link: '/link',
                 className: 'first-tile',
+                showArrow: false,
                 button: {
                     name: 'Learn More',
                     events: {
@@ -92,7 +95,6 @@ Since btnOnHover is set to false on second content, button won't be shown.
                 link: '/link',
                 bgcolor: '#707070',
                 className: 'second-tile',
-                showArrow: false,
                 btnOnHover: false,
                 button: {
                     name: 'Learn More',
@@ -115,7 +117,6 @@ By default image will be shown on left side and content will be shown on right s
 <Playground>
     {()=> {
         const items = {
-            showArrow: true,
             reverse: true,
             contents: [{
                 column: 1,
@@ -138,7 +139,9 @@ By default image will be shown on left side and content will be shown on right s
                 text: 'Content of the tile',
                 link: '/link',
                 bgcolor: '#707070',
-                className: 'second-tile'
+                className: 'second-tile',
+                showArrow: true,
+                reverse: false
             },
             {
                 column: 2,
@@ -147,8 +150,7 @@ By default image will be shown on left side and content will be shown on right s
                 title: 'Title',
                 text: 'Content of the tile',
                 link: '/link',
-                className: 'third-tile',
-                reverse: false,
+                className: 'third-tile'
             }]
         }
         return (

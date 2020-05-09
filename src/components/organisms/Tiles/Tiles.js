@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { StyledTiles as Styled } from './styled'
 import { FlexBox } from '@components/atoms'
 import { TileImage,  TileContent } from '@components/molecules'
+import { DEFAULT_BTN_COLOR } from '@config/styles'
 
 /* Function that combines content with same column into single array */
 const aggregateContents = (contents) => {
@@ -20,14 +21,14 @@ const aggregateContents = (contents) => {
 }
 
 const checkTypeOf = (content, defaults) => {
-    return typeof(content) !== 'undefined' ? content : defaults
+    return (typeof content !== 'undefined') ? content : defaults
 }
 
 const Tiles = React.forwardRef((props, ref) => {
     const {
         items: {
             bgcolor,
-            color,
+            color = DEFAULT_BTN_COLOR,
             btnOnHover = false,
             showArrow = false,
             reverse = false,
@@ -46,9 +47,9 @@ const Tiles = React.forwardRef((props, ref) => {
                         {
                             value.map((content, index) => {
                                 const xs = (content.image ? 6 : 12)
-                                const flex_reverse = checkTypeOf(content.reverse || reverse)
-                                const showBtnOnHover = checkTypeOf(content.btnOnHover || btnOnHover)
-                                const arrow = checkTypeOf(content.showArrow || showArrow)
+                                const flex_reverse = checkTypeOf(content.reverse, reverse)
+                                const showBtnOnHover = checkTypeOf(content.btnOnHover, btnOnHover)
+                                const isarrow = checkTypeOf(content.showArrow, showArrow)
 
                                 return (
                                     <FlexBox container key={index} className={content.className} href={content.link || '#'} background={content.bgcolor || bgcolor} 
@@ -61,7 +62,8 @@ const Tiles = React.forwardRef((props, ref) => {
                                         }
                                         {   
                                             (content.text || content.title) &&
-                                                <TileContent xs={xs} title={content.title} text={content.text} reverse={flex_reverse} showArrow={arrow}/>
+                                                <TileContent xs={xs} title={content.title} text={content.text} reverse={flex_reverse} showArrow={isarrow} 
+                                                bgcolor={content.bgcolor} />
                                         }    
                                     </FlexBox>
                                 )

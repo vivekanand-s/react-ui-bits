@@ -1,9 +1,10 @@
 import React, { createRef } from 'react'
+import PropTypes from 'prop-types'
 
 import { StyledAOS as Styled } from './styled'
 import { FlexBox } from '@components/atoms'
 import { TileImage, TileContent } from '@components/molecules'
-import { AOS_HOC } from '@utils/AOS'
+import { AOS } from '@utils/AOS'
 
 const AOSTile = React.forwardRef((props, ref) => {
     const {
@@ -29,20 +30,20 @@ const AOSTile = React.forwardRef((props, ref) => {
                         <FlexBox container key={index} className={content.className || ''} styles={Styled.WrapperStyles}>
                             {
                                 content.image && (
-                                    <AOS_HOC aosref={image_ref} styles={AOS_styles} options={options}>
+                                    <AOS aosref={image_ref} styles={AOS_styles} options={options}>
                                         <TileImage ref={image_ref} xs={xs} imageurl={content.image} alt={content.alt} 
-                                            styles={Styled.ImageStyles}
+                                            duration={duration} styles={Styled.ImageStyles}
                                         />
-                                    </AOS_HOC>
+                                    </AOS>
                                 )
                             }
                             {
                                 (content.title || content.text) && (
-                                    <AOS_HOC aosref={content_ref} styles={AOS_styles} options={options}>
+                                    <AOS aosref={content_ref} styles={AOS_styles} options={options}>
                                         <TileContent ref={content_ref} xs={xs} title={content.title} text={content.text} 
-                                            styles={[Styled.ContentStyles, content.styles]}
+                                            duration={duration} styles={[Styled.ContentStyles, content.styles]}
                                         />
-                                    </AOS_HOC>
+                                    </AOS>
                                 )
                             }
                         </FlexBox>
@@ -52,6 +53,48 @@ const AOSTile = React.forwardRef((props, ref) => {
         </FlexBox>
     )
 })
+
+AOSTile.PropTypes = {
+    /**
+     * Animation duration for the tiles in ms.
+     */
+    duration: PropTypes.number,
+    /**
+     * Class name for the AOS content
+     */
+    className: PropTypes.string,
+    /**
+     * Intersection options.
+     * https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+     */
+    options: PropTypes.shape({
+        root: PropTypes.node,
+        threshold: PropTypes.number,
+        rootMargin: PropTypes.string
+    }),
+    contents: PropTypes.shape({
+        /**
+         * Image url for the tile.
+         */
+        image: PropTypes.string,
+        /**
+         * Alternate text for the image
+         */
+        alt: PropTypes.string,
+        /**
+         * Title for the tile
+         */
+        title: PropTypes.string,
+        /**
+         * Main content of the tile
+         */
+        text: PropTypes.string,
+        /**
+         * Main content of the tile
+         */
+        className: PropTypes.string
+    })
+}
 
 export default AOSTile
 export { AOSTile }

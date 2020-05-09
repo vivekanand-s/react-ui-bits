@@ -20,11 +20,10 @@ const TileItemStyles = css`
     text-decoration: none;
     width: 100%;
     min-height: 200px;
-    ${props => props.btnOnHover && css`
-        &:hover .content-img ${Cover} {
-                display: block;
-            }
-    `}
+    &:hover .tile-img .tile-img-cover {
+        display: block;
+    }
+    
 `
 
 export const StyledTiles = { TileStyles, TileItemStyles }

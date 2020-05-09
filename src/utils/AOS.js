@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const AOS_HOC = props => {
+const AOS = props => {
     
     const {
         options: {
@@ -34,4 +34,4 @@ const AOS_HOC = props => {
     )
 }
 
-export { AOS_HOC }
+export { AOS }

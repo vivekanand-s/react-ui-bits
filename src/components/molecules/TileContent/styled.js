@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 const WrapperStyles = css`
-    position: 'relative';
+    position: relative;
     word-break: break-word;
 `
 
