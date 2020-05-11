@@ -24,7 +24,8 @@ const App = (props) => {
             image: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg',
             alt: 'alt text',
             title: 'Title',
-            text: 'Content of the tile'
+            text: 'Content of the tile',
+            direction: ['right', 'left']
         },
         {
             image: 'https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687',

@@ -58,7 +58,10 @@ TileImage.propTypes = {
     /**
      * Styles for the image tiles
      */
-    styles: PropTypes.object
+    styles: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object
+    ]) 
 }
 
 export default TileImage
