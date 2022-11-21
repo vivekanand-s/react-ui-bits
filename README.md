@@ -1,6 +1,6 @@
 # REACT-UI-BITS #
 
-React components for faster and easier web development. For components usage <a href='http://ec2-3-22-175-170.us-east-2.compute.amazonaws.com/'>visit the site</a>
+React components for faster and easier web development. For components usage <a href='https://react-ui-bits.netlify.app/'>visit the site</a>
 
 ## Installation
 
